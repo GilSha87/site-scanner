@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Duda Site Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>*,:before,:after{box-sizing:border-box;margin:0;padding:0}:root{--brand:#1d4ed8;--brand-dark:#1e3a8a;--brand-light:#eff6ff;--brand-mid:#bfdbfe;--success:#059669;--success-bg:#ecfdf5;--success-border:#a7f3d0;--warn:#d97706;--warn-bg:#fffbeb;--warn-border:#fde68a;--danger:#dc2626;--danger-bg:#fef2f2;--danger-border:#fecaca;--info:#0284c7;--info-bg:#f0f9ff;--info-border:#bae6fd;--bg:#f8f7f4;--surface:#fff;--surface2:#f3f2ee;--border:#e5e2da;--border2:#d1cec5;--text:#111318;--text2:#6b7280;--text3:#9ca3af;--sidebar:#0f172a;--font:"Sora", system-ui, sans-serif;--mono:"JetBrains Mono", monospace;--r:8px;--rl:12px;--rxl:16px}body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:13px;line-height:1.5}.app{height:100vh;display:flex;overflow:hidden}.sidebar{background:var(--sidebar);flex-direction:column;flex-shrink:0;width:216px;display:flex}.main{flex-direction:column;flex:1;min-width:0;display:flex;overflow:hidden}.topbar{background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;justify-content:space-between;align-items:center;height:58px;padding:0 24px;display:flex}.content{flex:1;padding:24px;overflow-y:auto}.sb-logo{border-bottom:1px solid #ffffff12;padding:20px 16px 14px}.sb-eyebrow{color:#ffffff4d;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:3px;font-size:9px;font-weight:500}.sb-title{color:#fff;align-items:center;gap:6px;font-size:15px;font-weight:600;display:flex}.sb-pill{background:var(--brand);color:#fff;letter-spacing:.5px;border-radius:4px;padding:2px 6px;font-size:8px;font-weight:700}.sb-nav{flex:1;padding:10px 8px}.sb-section{color:#ffffff40;letter-spacing:2px;text-transform:uppercase;margin-top:4px;padding:10px 10px 5px;font-size:9px;font-weight:600}.nav-item{cursor:pointer;color:#ffffff73;-webkit-user-select:none;user-select:none;border-radius:7px;align-items:center;gap:9px;margin-bottom:1px;padding:8px 10px;font-size:12px;font-weight:500;transition:all .12s;display:flex}.nav-item:hover{color:#fffc;background:#ffffff0f}.nav-item.active{color:#93c5fd;background:#1d4ed859}.nav-item svg{flex-shrink:0;width:14px;height:14px}.nav-badge{background:var(--warn);color:#fff;border-radius:10px;margin-left:auto;padding:1px 5px;font-size:9px;font-weight:700}.sb-foot{border-top:1px solid #ffffff12;padding:12px 14px}.sb-user{cursor:pointer;border-radius:7px;align-items:center;gap:9px;padding:6px 4px;transition:background .12s;display:flex}.sb-user:hover{background:#ffffff0d}.sb-uname{color:#ffffffbf;font-size:11px;font-weight:500}.sb-urole{color:#ffffff4d;margin-top:1px;font-size:10px}.av{border-radius:50%;flex-shrink:0;justify-content:center;align-items:center;font-weight:600;display:flex}.av-32{width:32px;height:32px;font-size:11px}.av-28{width:28px;height:28px;font-size:10px}.av-24{width:24px;height:24px;font-size:9px}.av-blue{color:#93c5fd;background:#1d4ed866}.av-green{color:#6ee7b7;background:#0596694d}.av-amber{color:#fcd34d;background:#d977064d}.tb-title{font-size:15px;font-weight:600}.tb-sub{color:var(--text2);margin-top:1px;font-size:11px}.tb-actions{align-items:center;gap:8px;display:flex}.btn{border-radius:var(--r);cursor:pointer;font-size:12px;font-weight:500;font-family:var(--font);white-space:nowrap;border:none;align-items:center;gap:5px;padding:7px 14px;transition:all .12s;display:inline-flex}.btn svg{width:13px;height:13px}.btn-primary{background:var(--brand);color:#fff}.btn-primary:hover{background:var(--brand-dark)}.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{background:var(--surface2)}.btn-ghost{color:var(--text2);background:0 0;border:1px solid #0000}.btn-ghost:hover{background:var(--surface2);color:var(--text)}.btn-danger{background:var(--danger-bg);color:var(--danger);border:1px solid var(--danger-border)}.btn-danger:hover{background:#fee2e2}.btn-success{background:var(--success-bg);color:var(--success);border:1px solid var(--success-border)}.btn-sm{padding:5px 10px;font-size:11px}.btn-xs{padding:3px 8px;font-size:10px}.btn:disabled{opacity:.4;cursor:not-allowed;pointer-events:none}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl)}.card-hd{border-bottom:1px solid var(--border);justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;display:flex}.card-title{align-items:center;gap:8px;font-size:13px;font-weight:600;display:flex}.card-body{padding:18px}.stat-grid{gap:12px;margin-bottom:20px;display:grid}.stat-grid-3{grid-template-columns:repeat(3,1fr)}.stat-grid-4{grid-template-columns:repeat(4,1fr)}.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:16px 18px}.stat-lbl{color:var(--text2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;font-size:10px;font-weight:600}.stat-val{font-size:26px;font-weight:600;line-height:1}.stat-sub{color:var(--text3);margin-top:4px;font-size:11px}.tbl-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}th{text-align:left;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;background:var(--surface2);border-bottom:1px solid var(--border);padding:9px 14px;font-size:10px;font-weight:600}td{border-bottom:1px solid var(--border);vertical-align:middle;padding:11px 14px}tr:last-child td{border-bottom:none}tbody tr:hover td{background:var(--surface2)}.badge{border-radius:20px;align-items:center;gap:3px;padding:2px 7px;font-size:10px;font-weight:600;display:inline-flex}.badge-blue{background:var(--info-bg);color:var(--info)}.badge-green{background:var(--success-bg);color:var(--success)}.badge-amber{background:var(--warn-bg);color:var(--warn)}.badge-red{background:var(--danger-bg);color:var(--danger)}.badge-gray{background:var(--surface2);color:var(--text2)}.dot{background:currentColor;border-radius:50%;flex-shrink:0;width:5px;height:5px}.fg{margin-bottom:14px}.flabel{color:var(--text);margin-bottom:5px;font-size:11px;font-weight:600;display:block}.finput,.fselect{border:1px solid var(--border);border-radius:var(--r);width:100%;font-size:12px;font-family:var(--font);color:var(--text);background:var(--surface);outline:none;padding:8px 11px;transition:border-color .12s}.finput:focus,.fselect:focus{border-color:var(--brand);box-shadow:0 0 0 3px #1d4ed814}.finput.err{border-color:var(--danger)}.fhint{color:var(--text3);margin-top:3px;font-size:11px}.ferr{color:var(--danger);margin-top:3px;font-size:11px;display:none}.ferr.show{display:block}.frow{grid-template-columns:1fr 1fr;gap:12px;display:grid}.finput[disabled]{opacity:.5;cursor:not-allowed;background:var(--surface2)}.overlay{z-index:200;background:#00000059;justify-content:center;align-items:center;padding:20px;display:flex;position:fixed;inset:0}.modal{background:var(--surface);border-radius:var(--rxl);border:1px solid var(--border2);width:500px;max-width:100%;max-height:88vh;overflow-y:auto}.modal-hd{border-bottom:1px solid var(--border);justify-content:space-between;align-items:center;padding:18px 22px 14px;display:flex}.modal-title{font-size:14px;font-weight:600}.modal-x{border:1px solid var(--border);background:var(--surface2);cursor:pointer;width:28px;height:28px;color:var(--text2);border-radius:6px;justify-content:center;align-items:center;font-size:16px;line-height:1;transition:background .12s;display:flex}.modal-x:hover{background:var(--border)}.modal-body{padding:20px 22px}.modal-foot{border-top:1px solid var(--border);justify-content:flex-end;gap:8px;padding:14px 22px;display:flex}.role-grid{grid-template-columns:1fr 1fr;gap:8px;display:grid}.role-opt{border:1px solid var(--border);border-radius:var(--r);cursor:pointer;padding:11px 13px;transition:all .12s}.role-opt:hover{background:var(--surface2)}.role-opt.sel{border-color:var(--brand);background:var(--brand-light)}.role-opt-name{margin-bottom:3px;font-size:12px;font-weight:600}.role-opt-desc{color:var(--text2);font-size:10px}.role-opt.sel .role-opt-desc{color:var(--info)}.alert{border-radius:var(--r);align-items:flex-start;gap:8px;padding:10px 14px;font-size:12px;line-height:1.5;display:flex}.alert svg{flex-shrink:0;width:14px;height:14px;margin-top:1px}.alert-info{background:var(--info-bg);color:var(--info);border:1px solid var(--info-border)}.alert-warn{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-border)}.alert-success{background:var(--success-bg);color:var(--success);border:1px solid var(--success-border)}.alert-danger{background:var(--danger-bg);color:var(--danger);border:1px solid var(--danger-border)}.login-screen{background:var(--sidebar);justify-content:center;align-items:center;min-height:100vh;padding:20px;display:flex}.login-card{background:var(--surface);border:1px solid var(--border2);border-radius:20px;width:400px;padding:36px}.login-eyebrow{color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;font-size:9px;font-weight:600}.login-title{font-size:22px;font-weight:600}.login-sub{color:var(--text2);margin-top:4px;margin-bottom:24px;font-size:12px}.login-domain{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);color:var(--text2);align-items:center;gap:8px;margin-bottom:16px;padding:8px 11px;font-size:12px;display:flex}.login-domain svg{flex-shrink:0;width:12px;height:12px}.pw-wrap{position:relative}.pw-wrap .finput{padding-right:36px}.pw-toggle{cursor:pointer;color:var(--text3);background:0 0;border:none;padding:2px;position:absolute;top:50%;right:10px;transform:translateY(-50%)}.pw-strength{background:var(--border);border-radius:2px;height:3px;margin-top:6px;transition:all .3s}.domain-input-wrap{align-items:center;display:flex}.domain-input-wrap .finput{border-radius:var(--r) 0 0 var(--r);border-right:none;flex:1}.domain-suffix{background:var(--surface2);border:1px solid var(--border);border-radius:0 var(--r) var(--r) 0;color:var(--text2);white-space:nowrap;border-left:none;align-items:center;gap:5px;padding:8px 11px;font-size:12px;display:flex}.domain-suffix svg{width:11px;height:11px;color:var(--success)}.scan-item{border-radius:var(--r);border:1px solid var(--border);margin-bottom:8px;padding:11px 13px}.scan-item.change{border-left:3px solid var(--warn);background:#fffdf5}.scan-item.improvement{border-left:3px solid var(--brand);background:#f0f7ff}.scan-item.new-content{border-left:3px solid var(--success);background:var(--success-bg)}.scan-tag{text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px;font-size:9px;font-weight:700}.scan-item.change .scan-tag{color:var(--warn)}.scan-item.improvement .scan-tag{color:var(--brand)}.scan-item.new-content .scan-tag{color:var(--success)}.scan-name{margin-bottom:2px;font-size:12px;font-weight:600}.scan-detail{color:var(--text2);font-size:11px;line-height:1.5}.score-row{margin-bottom:10px}.score-label-row{justify-content:space-between;margin-bottom:4px;font-size:11px;display:flex}.score-bar{background:var(--surface2);border-radius:3px;height:5px;overflow:hidden}.score-fill{border-radius:3px;height:100%;transition:width .5s}.email-mock{border-radius:var(--rl);background:#f3f4f6;font-family:Georgia,serif;overflow:hidden}.email-hd{background:var(--sidebar);padding:16px 20px}.email-from{color:#fff6;font-size:10px;font-family:var(--font);margin-bottom:3px}.email-subj{color:#fff;font-size:14px;font-weight:600;font-family:var(--font)}.email-body{color:#374151;padding:18px 20px;font-size:12px;line-height:1.7}.email-section{border-radius:var(--r);background:#fff;border:1px solid #e5e7eb;margin:12px 0;padding:12px 14px}.email-section h4{font-family:var(--font);color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;font-size:10px;font-weight:700}.email-section ul{padding-left:16px}.email-section li{margin-bottom:5px;font-size:12px}.summary-card{border-radius:var(--rl);color:#fff;background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 100%);margin-bottom:12px;padding:24px}.summary-card h3{margin-bottom:4px;font-size:16px;font-weight:600}.summary-card p{opacity:.8;font-size:12px;line-height:1.6}.summary-meta{gap:16px;margin-top:14px;display:flex}.summary-meta-item{opacity:.7;font-size:11px}.summary-meta-val{opacity:1;margin-bottom:1px;font-size:18px;font-weight:600;display:block}.prog-bar{background:var(--surface2);border-radius:2px;height:3px;overflow:hidden}.prog-fill{background:var(--brand);border-radius:2px;height:100%;transition:width .4s}@keyframes pulse{0%,to{opacity:1}50%{opacity:.4}}.pulsing{animation:1.2s infinite pulse}@keyframes spin{to{transform:rotate(360deg)}}.spinner{border:2px solid #1d4ed833;border-top-color:var(--brand);border-radius:50%;width:18px;height:18px;animation:.7s linear infinite spin}@keyframes fadein{0%{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.fadein{animation:.25s both fadein}.empty{text-align:center;color:var(--text2);padding:48px 20px}.empty-icon{background:var(--surface2);border-radius:50%;justify-content:center;align-items:center;width:48px;height:48px;margin:0 auto 14px;display:flex}.empty-title{color:var(--text);margin-bottom:5px;font-size:14px;font-weight:600}.empty-sub{margin-bottom:16px;font-size:12px}.demo-banner{color:#fff;text-align:center;letter-spacing:.3px;background:#7c3aed;flex-shrink:0;padding:8px 16px;font-size:11px;font-weight:500}.demo-banner a{color:#ddd6fe;text-decoration:underline}.toast{color:#fff;z-index:9999;pointer-events:none;background:#111827;border-radius:9px;max-width:320px;padding:10px 16px;font-size:12px;font-weight:500;transition:opacity .3s;position:fixed;bottom:22px;right:22px}.mono{font-family:var(--mono);font-size:11px}.chip{background:var(--surface2);border:1px solid var(--border);color:var(--text2);border-radius:6px;align-items:center;gap:4px;padding:2px 8px;font-size:10px;font-weight:500;display:inline-flex}.perm-check{text-align:center;font-size:14px}.loading-screen{background:var(--bg);justify-content:center;align-items:center;min-height:100vh;display:flex}.pending-invite{background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--r);justify-content:space-between;align-items:center;margin-bottom:8px;padding:10px 14px;display:flex}::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:0 0}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module">var e=Object.defineProperty,t=(t,n)=>{let r={};for(var i in t)e(r,i,{get:t[i],enumerable:!0});return n||e(r,Symbol.toStringTag,{value:`Module`}),r};(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var n={session:null,member:null,page:`dashboard`,members:[],clients:[],scans:[]};function r(){return n.member?.role===`admin`}function i(e){return r()||e.am_id===n.member?.id}var a=[{id:`demo-1`,auth_id:`demo-auth-1`,name:`Gil Sadeh`,email:`gil@duda.co`,role:`admin`,status:`active`,created_at:new Date(Date.now()-60*864e5).toISOString()},{id:`demo-2`,auth_id:`demo-auth-2`,name:`Sarah Chen`,email:`sarah@duda.co`,role:`staff`,status:`active`,created_at:new Date(Date.now()-30*864e5).toISOString()},{id:`demo-3`,auth_id:`demo-auth-3`,name:`Marco Rossi`,email:`marco@duda.co`,role:`staff`,status:`active`,created_at:new Date(Date.now()-14*864e5).toISOString()}],o=[{id:`client-1`,name:`Bright Digital Agency`,url:`https://brightdigital.com`,am_id:`demo-2`,client_icp:`DIFM_MM`,client_flow:`DIFM`,notes:`Full-service web agency, builds for SMB clients`,last_scan:new Date(Date.now()-5*864e5).toISOString(),created_at:new Date(Date.now()-40*864e5).toISOString()},{id:`client-2`,name:`Nova Web Studios`,url:`https://novawebstudios.com`,am_id:`demo-1`,client_icp:`DIFM_MM`,client_flow:`DIFM`,notes:`Mid-market agency, collaborative builds`,last_scan:new Date(Date.now()-25*864e5).toISOString(),created_at:new Date(Date.now()-35*864e5).toISOString()},{id:`client-3`,name:`Apex Creative Group`,url:`https://apexcreative.io`,am_id:`demo-3`,client_icp:`DIFM_MM`,client_flow:`DIFM`,notes:`Design agency, frequent portfolio updates`,last_scan:null,created_at:new Date(Date.now()-10*864e5).toISOString()},{id:`client-4`,name:`Metro Property Group`,url:`https://metroproperty.com`,am_id:`demo-2`,client_icp:`DIFM_SAAS`,client_flow:`DIFM`,notes:`Property mgmt SaaS — DIFM web embedded in vertical`,last_scan:new Date(Date.now()-3*864e5).toISOString(),created_at:new Date(Date.now()-20*864e5).toISOString()}],s=[{id:`scan-1`,client_id:`client-1`,created_at:new Date(Date.now()-5*864e5).toISOString(),result:{summary:`Bright Digital Agency's website is in a growth phase — new vertical keywords and an enterprise tier detected. No red flags. Strong Duda adoption with Flex layout and booking widget active.`,score:8,riskLevel:`ok`,scoreBreakdown:{services:8,pricing:7,portfolio:8,homepage:8,cta:7,trust:7},redFlags:[],growthSignals:[{type:`tier_shifting`,title:`"Enterprise" tier added to pricing page`,detail:`A new Enterprise card was added above the Pro tier with custom pricing, dedicated support, and white-label options.`,csmInsight:`Moving upmarket. Action: Introduce Bright Digital to Duda's Enterprise Partner programme and discuss volume pricing before they start winning larger accounts independently.`},{type:`vertical_expansion`,title:`E-commerce vertical keywords detected`,detail:`"E-commerce Web Design" and "Online Store Setup" now appear in the services page title and H1 tags.`,csmInsight:`E-commerce expansion is a high-margin opportunity. Action: Demo Duda's native store builder and abandoned cart features — position them as tools Bright Digital can upsell to every client.`},{type:`ai_adoption`,title:`AI Website Audit service page published`,detail:`New /services/ai-audit page positions AI as a speed and quality differentiator.`,csmInsight:`They're selling AI before they've fully adopted Duda's AI tools. Action: Schedule a platform walkthrough specifically on AI content generation and AI section creation — these are the features that back up their promise.`}],dudaAdoption:{score:9,flexUsed:!0,widgetsDetected:[`dm-flex`,`d-calendar`,`duda-store`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Excellent platform adoption. Flex, booking, and store widgets all active. White-label intact. This partner is a strong reference candidate.`},changes:[{type:`pricing`,title:`Enterprise tier added to pricing`,detail:`New top-tier card added with custom pricing and dedicated support. No recommended tier badge yet — the Pro tier gets lost.`},{type:`service`,title:`AI Audit service page launched`,detail:`/services/ai-audit is live. Strong concept, good copy, but no CTA button on the page — visitors have no way to enquire directly.`}],newContent:[{type:`service`,title:`E-commerce vertical page created`,detail:`/services/ecommerce launched with 3 portfolio examples. Working lead form. Strong page.`},{type:`portfolio`,title:`2 new portfolio case studies`,detail:`E-commerce clients added with before/after screenshots. One includes a revenue metric.`}],improvements:[{priority:`high`,area:`Services`,title:`Add CTA to AI Audit service page`,detail:`The new AI Audit page has no enquiry button. A "Book a free audit" CTA could immediately drive leads from this page — a 5-minute Duda fix.`},{priority:`high`,area:`Pricing`,title:`Highlight the Pro tier as recommended`,detail:`With 3 tiers now, decision paralysis is likely. Adding a "Most popular" badge to Pro lifts conversions 15-25%. Quick Duda design change.`},{priority:`medium`,area:`Trust`,title:`Duda Partner badge not visible`,detail:`No official Duda Partner badge displayed. Adding it above the fold signals platform expertise — especially relevant now they're targeting enterprise clients.`}],emailDigest:`Bright Digital is in a strong growth phase — enterprise tier, AI service, and e-commerce vertical all launched this cycle. No red flags detected. Good moment to expand the partnership conversation.`,talkingPoints:[`They launched an Enterprise tier — connect them to Duda's Partner programme before they start winning those accounts without your support.`,`The AI Audit page has no CTA — you can fix this live on the call in 5 minutes and demonstrate Duda's speed at the same time.`,`They're using Duda's store and calendar widgets — they're a strong reference candidate for co-marketing.`],clientSummary:{headline:`Growth phase — expand the partnership now`,highlights:[`Enterprise pricing tier shows upmarket ambition`,`AI service positioning is ahead of most peers`,`Excellent Duda platform adoption`],opportunities:[`Add CTA to AI Audit page`,`Mark Pro tier as recommended on pricing`]}}},{id:`scan-2`,client_id:`client-4`,created_at:new Date(Date.now()-3*864e5).toISOString(),result:{summary:`Metro Property Group has critical red flags requiring immediate AM attention — a Webflow script was detected on the services page and the pricing page is returning a 404. The partner is still building but showing platform dilution risk.`,score:4,riskLevel:`critical`,scoreBreakdown:{services:5,pricing:1,portfolio:6,homepage:4,cta:3,trust:4},redFlags:[{type:`competitor_detected`,severity:`critical`,title:`Webflow script detected on services page`,detail:`A Webflow.js embed was found in the body of /services. The partner may be testing or using Webflow for client projects.`,csmInsight:`Platform dilution risk — act this week. Don't lead with the detection. Open the call with questions about their current project pipeline and tools. If they're using Webflow for specific use cases, identify which and counter with Duda's equivalent features directly.`},{type:`page_404`,severity:`critical`,title:`Pricing page returning 404`,detail:`/pricing returns a 404 error. The page has been removed or broken — all pricing traffic hits a dead end.`,csmInsight:`A broken pricing page means zero pricing conversions right now. Frame this as "we were trying to refer someone to your pricing and noticed the page is down" — helpful, not surveillance.`},{type:`lead_form_broken`,severity:`warn`,title:`Homepage lead form not submitting`,detail:`The primary homepage contact form submits with no confirmation — likely a broken webhook or script error. Leads are being lost silently.`,csmInsight:`Silent lead loss from their own agency site is serious — it directly contradicts the service they sell. Fixing it live on the call is a powerful trust-building moment.`}],growthSignals:[{type:`content_velocity`,title:`3 new portfolio properties added`,detail:`Three new property listing sites added to the portfolio despite the technical issues above.`,csmInsight:`They're still actively building — the business isn't stalled. Fixing the technical issues unlocks the growth that's clearly happening.`}],dudaAdoption:{score:3,flexUsed:!1,widgetsDetected:[],whitelabelIntact:!1,legacyWidgets:!0,insight:`Low Duda adoption — legacy widgets detected, Flex not in use, white-label removed. Combined with the Webflow detection, this partner needs immediate re-engagement on the platform roadmap.`},changes:[{type:`service`,title:`Services page redesigned`,detail:`Full layout rebuild this cycle — Webflow script introduced during the update. New design is visually cleaner but off-platform.`},{type:`homepage`,title:`Homepage headline updated`,detail:`New headline no longer references Duda or web platform expertise. Generic "Property websites that convert" — not wrong, but loses platform differentiation.`}],newContent:[{type:`portfolio`,title:`3 new property portfolio sites`,detail:`Real estate client work — good quality, one includes a virtual tour integration. Active output despite the technical flags.`}],improvements:[{priority:`high`,area:`CTA`,title:`Fix broken homepage lead form immediately`,detail:`Primary contact form is broken. Every visitor who tries to enquire hits a dead end. Diagnose and fix in Duda — offer to do it together on the call.`},{priority:`high`,area:`Pricing`,title:`Rebuild pricing page — currently 404`,detail:`Rebuild a clean 3-tier pricing layout in Duda. Offer to build it together on the next call as a partnership exercise — it also showcases Duda's speed.`},{priority:`medium`,area:`Trust`,title:`Add platform credentials back to positioning`,detail:`Removing Duda references has left the positioning generic. "Certified Duda Partner" or similar adds credibility, especially for property developers evaluating agency partners.`}],emailDigest:`Metro Property Group has critical flags this cycle — Webflow script detected, pricing page down, broken lead form. Immediate outreach needed. Frame the call around 'your site health' not 'we found problems.'`,talkingPoints:[`Pricing page is a 404 — open with "we were trying to refer someone your way and noticed this" — positions you as looking out for them.`,`The broken contact form is costing them real leads from their own site. Fixing it live on the call is the most powerful thing you can do in 10 minutes.`,`Ask directly what tools they're using for current client projects — the Webflow detection needs context before drawing conclusions.`],clientSummary:{headline:`Technical issues need fixing before next client call`,highlights:[`Active portfolio output shows business is continuing`,`New services page layout is visually improved`,`Property work quality remains strong`],opportunities:[`Fix broken contact form and restore pricing page`,`Re-establish Duda platform positioning in credentials`]}}}],c=a[0],l=t({IS_DEMO:()=>!0,clearScans:()=>ie,deleteClient:()=>g,getMemberByAuthId:()=>f,getSession:()=>ee,insertClient:()=>m,inviteMember:()=>ae,loadAll:()=>p,reactivateMember:()=>y,removeMember:()=>b,runScan:()=>re,sb:()=>null,signIn:()=>te,signOut:()=>ne,suspendMember:()=>v,updateClient:()=>h,updateMember:()=>_}),u={members:JSON.parse(sessionStorage.getItem(`demo_members`)||`null`)||[...a],clients:JSON.parse(sessionStorage.getItem(`demo_clients`)||`null`)||[...o],scans:JSON.parse(sessionStorage.getItem(`demo_scans`)||`null`)||[...s],session:{user:{id:c.auth_id},member:c}};function d(){sessionStorage.setItem(`demo_members`,JSON.stringify(u.members)),sessionStorage.setItem(`demo_clients`,JSON.stringify(u.clients)),sessionStorage.setItem(`demo_scans`,JSON.stringify(u.scans))}async function ee(){return u.session}async function f(e){return u.members.find(t=>t.auth_id===e)||null}async function te(e,t){{let n=u.members.find(t=>t.email===e&&t.status===`active`);return n?t===`demo`?(u.session={user:{id:n.auth_id},member:n},{data:{session:u.session},error:null}):{error:{message:`Demo password is: demo`}}:{error:{message:`No active account found for this email`}}}return null.auth.signInWithPassword({email:e,password:t})}async function ne(){u.session=null}async function p(){return{members:u.members,clients:u.clients.map(e=>({...e,am:u.members.find(t=>t.id===e.am_id)||null})),scans:[...u.scans].sort((e,t)=>new Date(t.created_at)-new Date(e.created_at))}}async function m({name:e,url:t,am_id:n,notes:r,client_icp:i,client_flow:a}){{let o={id:x(),name:e,url:t,am_id:n||null,notes:r,client_icp:i||`DIFM_MM`,client_flow:a||`DIFM`,last_scan:null,created_at:new Date().toISOString()};return u.clients.push(o),d(),{data:o,error:null}}return null.from(`clients`).insert({name:e,url:t,am_id:n,notes:r,client_icp:i,client_flow:a})}async function h(e,t){{let n=u.clients.findIndex(t=>t.id===e);return n>-1&&(u.clients[n]={...u.clients[n],...t},d()),{error:null}}return null.from(`clients`).update(t).eq(`id`,e)}async function g(e){return u.clients=u.clients.filter(t=>t.id!==e),u.scans=u.scans.filter(t=>t.client_id!==e),d(),{error:null}}async function re(e){{await oe(2200);let t=se(u.clients.find(t=>t.id===e)),n={id:x(),client_id:e,created_at:new Date().toISOString(),result:t};u.scans.unshift(n);let r=u.clients.findIndex(t=>t.id===e);return r>-1&&(u.clients[r].last_scan=new Date().toISOString()),d(),{data:{scan_id:n.id,email_sent:!1},error:null}}let{data:t,error:n}=await null.functions.invoke(`run-scan`,{body:{client_id:e,triggered_by:`manual`}});return{data:t,error:n}}async function ie(){return u.scans=[],u.clients.forEach(e=>e.last_scan=null),d(),{error:null}}async function ae({name:e,email:t,role:n,password:r}){{if(u.members.find(e=>e.email===t))return{error:{message:`Email already registered`}};let r={id:x(),auth_id:x(),name:e,email:t,role:n,status:`active`,created_at:new Date().toISOString()};return u.members.push(r),d(),{data:r,error:null}}return null.functions.invoke(`invite-member`,{body:{name:e,email:t,role:n,password:r}})}async function _(e,t){{let n=u.members.findIndex(t=>t.id===e);return n>-1&&(u.members[n]={...u.members[n],...t},d()),{error:null}}return null.from(`members`).update(t).eq(`id`,e)}async function v(e){return _(e,{status:`suspended`})}async function y(e){return _(e,{status:`active`})}async function b(e){return u.members=u.members.filter(t=>t.id!==e),d(),{error:null}}function x(){return Date.now().toString(36)+Math.random().toString(36).slice(2)}function oe(e){return new Promise(t=>setTimeout(t,e))}function se(e){let t=e?.client_icp||`DIFM_MM`,n=e?.client_flow||`DIFM`,r=e?.name||`This client`,i={DIFM_MM:{benchmarkUrls:[`https://www.duda.co/solutions/agencies`],benchmarkLabel:`duda.co/solutions/agencies`},DIFM_ENT:{benchmarkUrls:[`https://www.duda.co/solutions/agencies`],benchmarkLabel:`duda.co/solutions/agencies`},DIFM_SAAS:{benchmarkUrls:[`https://www.duda.co/solutions/agencies`],benchmarkLabel:`duda.co/solutions/agencies`},DIY:{benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],benchmarkLabel:`duda.co/solutions/saas-platforms + /hosts`},DIY_SAAS_NON_V:{benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],benchmarkLabel:`duda.co/solutions/saas-platforms + /hosts`},DIY_SAAS_VERT:{benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],benchmarkLabel:`duda.co/solutions/saas-platforms + /hosts`}},a=i[t]||i.DIFM_MM,o={DIFM_MM:{summary:`${r} is a mid-market agency offering done-for-you website builds as their primary service. Scanned across 6 pages. The site has a working portfolio and clear service list but messaging across all pages is feature-focused — services described by what they include, not what the client achieves. Pricing requires 3+ clicks and no recommended tier is highlighted.`,score:7,riskLevel:`warn`,scoreBreakdown:{discoverability:7,pricing_clarity:5,cta_strength:6,offering_depth:7,duda_alignment:5,trust:7},pagesScanned:[`Homepage`,`Services`,`Pricing`,`Portfolio`,`About`,`Contact`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's agency page leads with '10x faster' delivery and immediately surfaces white-label, client management, and multi-site features. This partner's homepage leads with service descriptions — no speed, scale, or turnaround language on any page.`,gaps:[`No delivery speed or turnaround language on any page — Duda leads with "10x faster"`,`White-label capability not mentioned on services, pricing, or about pages`,`Pricing not in main nav — requires 2+ clicks from any page`,`Portfolio shows visuals only — no client outcomes, timelines, or metrics`,`No recommended pricing tier — decision paralysis at highest-intent moment`],strengths:[`Services page has more depth per service than Duda's high-level overview`,`About page includes team bios — adds credibility Duda's agency page lacks`]},redFlags:[{type:`lead_form_broken`,severity:`warn`,title:`Contact form captures name + email only — no project brief fields`,detail:`The enquiry form has no project type, budget range, or timeline field. Leads land with no context, increasing qualification time.`,csmInsight:`"Your contact form is one field away from pre-qualifying your best leads. A project type dropdown takes 10 minutes in Duda and changes the quality of every enquiry you receive."`}],growthSignals:[{type:`tier_shifting`,title:`"Enterprise packages" language added to Services page`,detail:`"Enterprise Websites" and "Scalable Solutions" now appear in the services list.`,csmInsight:`Moving upmarket. Action: Introduce Duda's agency plan with multi-site management — show how it operationalises enterprise-scale delivery without adding headcount.`},{type:`vertical_expansion`,title:`E-commerce service page added to navigation`,detail:`New /services/ecommerce page live with 3 portfolio examples. Pricing page not updated to reflect.`,csmInsight:`New vertical page is a buying signal. Action: Demo Duda's native store builder — position it as the tool that makes e-commerce delivery repeatable.`}],dudaAdoption:{score:7,flexUsed:!0,widgetsDetected:[`dm-flex`,`d-calendar`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Good core adoption. Opportunity to introduce client portal to support the enterprise positioning push.`},pageFindings:[{page:`Homepage`,url:`/home`,headline:`"We build great websites"`,ctaType:`Sign-up`,ctaText:`"Get started"`,language:`Feature-focused`,findings:[`Hero headline leads with the service, not the client outcome`,`No delivery speed or turnaround language`,`Trust signals below the fold`],suggestion:`Rewrite hero as outcome: "Websites that win more business for your clients — delivered in 5 business days."`},{page:`Services`,url:`/services`,headline:`"Our Services"`,ctaType:`Enquiry form`,ctaText:`"Get in touch"`,language:`Feature-focused`,findings:[`Service descriptions list deliverables, not outcomes`,`No pricing anchor on this page`,`Enterprise tier listed but no dedicated page`],suggestion:`Reframe each service description around the client outcome. Add "From £X" anchor under each service.`},{page:`Pricing`,url:`/pricing`,headline:`"Our Packages"`,ctaType:`Sign-up`,ctaText:`"Choose plan"`,language:`Feature-focused`,findings:[`Three tiers with no recommended option`,`Tier names are generic: Starter / Growth / Enterprise`,`Feature comparison leads with technical specs`],suggestion:`Mark Growth tier as "Most popular." Rename tiers to audience labels. Add one client quote per tier.`},{page:`Portfolio`,url:`/portfolio`,headline:`"Our Work"`,ctaType:`View case study`,ctaText:`"See more"`,language:`Feature-focused`,findings:[`12 projects — strong visuals but zero outcome metrics`,`No project timelines or "delivered in X days" language`,`No client quotes`],suggestion:`Add one outcome metric per project. Add client quote to 3 portfolio items. Include delivery timeline on featured projects.`},{page:`About`,url:`/about`,headline:`"About Us"`,ctaType:`Enquiry`,ctaText:`"Work with us"`,language:`Neutral`,findings:[`Team bios present — good credibility signal`,`No Duda platform expertise mentioned`,`No client count or projects completed`],suggestion:`Add "X websites built" stat. Add Duda Certified Partner badge.`},{page:`Contact`,url:`/contact`,headline:`"Get in Touch"`,ctaType:`Enquiry form`,ctaText:`"Send message"`,language:`Neutral`,findings:[`Form captures name + email + message only`,`No project type or budget field`,`No response time expectation set`],suggestion:`Add project type dropdown and budget range. Add "We respond within 24 hours."`}],changes:[{type:`service`,title:`E-commerce service page added to nav`,detail:`New /services/ecommerce — 3 portfolio examples, working enquiry form. Pricing page not updated.`},{type:`pricing`,title:`Enterprise tier added to pricing page`,detail:`3-tier layout now includes Enterprise. No recommended badge and no feature comparison row.`}],newContent:[{type:`service`,title:`AI design service mentioned on Services page`,detail:`"AI-assisted design" listed as a capability. No dedicated page or client-facing detail.`}],improvements:[{priority:`high`,area:`Pricing`,title:`Pricing not in main navigation`,detail:`No nav link to pricing across any page. Moving pricing to the main nav is the single highest-leverage change available. See GTM checklist: "No contact us for pricing on primary offering — kills self-serve conversion."`},{priority:`high`,area:`Homepage`,title:`Hero headline is feature-focused across all pages`,detail:`Homepage, services, and e-commerce page all lead with what the agency does. Add delivery speed language: "Your site live in 5 business days — we handle everything." Per GTM best practices for DIFM.`},{priority:`medium`,area:`Portfolio`,title:`Portfolio shows work but no outcomes or timelines`,detail:`All 6 pages visited — zero outcome metrics. Per GTM guide: "Partners show design portfolios but not business outcomes. Add average client sees X% more traffic in 90 days."`}],emailDigest:`${r} (DIFM · MM) scanned across 6 pages. Growth signals: enterprise tier + e-commerce vertical. Key gaps: pricing not in nav, no outcome language on any page, no delivery timeline visible. Contact form has no brief fields. Good call prep.`,talkingPoints:[`Pricing is on the site but not in the nav — visitors on the portfolio page have no path to it. Per GTM checklist: no "contact us for pricing" on primary offering kills conversion.`,`Enterprise tier is live but portfolio and services pages don't support it — no outcomes, no scale language. Help them close the story gap.`,`No delivery timeline anywhere. "Your site live in 5 business days" is the single most powerful DIFM promise — it's completely absent.`],clientSummary:{headline:`Strong work, messaging needs to match the ambition`,highlights:[`E-commerce vertical is well-executed`,`Portfolio volume and quality are strong`,`Enterprise tier signals upmarket movement`],opportunities:[`Add pricing to main navigation`,`Add delivery timeline to homepage hero`]}},DIFM_ENT:{summary:`${r} is an enterprise-scale done-for-me provider. Scanned across 7 pages. The platform has strong ROI and outcome framing on the homepage but individual product pages revert to feature lists. Pricing is opaque — "contact for pricing" is the only path, which creates friction at scale. No DIY → DIFM conversion path detected.`,score:7,riskLevel:`warn`,scoreBreakdown:{discoverability:6,pricing_clarity:4,cta_strength:7,offering_depth:8,duda_alignment:6,trust:9},pagesScanned:[`Homepage`,`Products`,`Pricing`,`Case Studies`,`About`,`Contact`,`Blog`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's agency page explicitly surfaces white-label dashboards, multi-site management, and performance metrics as hero content. This partner leads strongly with outcome language on the homepage but individual product pages don't carry that framing through.`,gaps:[`No DIY → DIFM conversion path anywhere — GTM guide lists this as 88% impact gap`,`Product pages feature-focused despite strong homepage outcome framing`,`"Contact for pricing" creates friction — no package overview visible without sales contact`,`White-label and client portal capabilities mentioned but not positioned as differentiators`],strengths:[`Homepage ROI and outcome framing is strong — comparable to Thryv/Hibu benchmark`,`Case study library is extensive with specific metrics — industry-leading proof`,`Trust signals (customer count, partner credentials) prominently placed`]},redFlags:[{type:`page_404`,severity:`warn`,title:`DIY trial or self-serve entry path not found on any page`,detail:`No free trial, freemium tier, or DIY path detected. Per GTM guide: missing DIY → DIFM conversion path is the #1 revenue gap at 88% impact.`,csmInsight:`"You're leaving significant revenue on the table without a DIY entry tier. GTM data shows 82% of high-performing Duda partners offer both DIY and DIFM. Even a simple trial tier creates a natural upgrade path to your done-for-you service."`}],growthSignals:[{type:`tier_shifting`,title:`Premium and Enterprise tiers expanded on pricing page`,detail:`New Enterprise tier with custom pricing added above existing Premium tier.`,csmInsight:`Moving further upmarket. Action: Discuss Duda's enterprise volume licensing and white-label dashboard as tools that support this positioning.`},{type:`ai_adoption`,title:`AI-powered features added to product suite`,detail:`AI recommendations and automated reporting now listed on product pages.`,csmInsight:`AI adoption is a growth signal. Action: Position Duda's AI content generator as a platform-level capability that differentiates the enterprise offering.`}],dudaAdoption:{score:8,flexUsed:!0,widgetsDetected:[`dm-flex`,`duda-store`,`d-calendar`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Strong Duda adoption at scale. Opportunity to introduce white-label client portal to reduce customer service overhead at enterprise volume.`},pageFindings:[{page:`Homepage`,url:`/`,headline:`"Run your business. We handle your marketing."`,ctaType:`Demo request`,ctaText:`"Book a demo"`,language:`Outcome-focused`,findings:[`Strong outcome headline — one of the best reviewed`,`Social proof (customer count, logos) well-positioned`,`Product suite not named on homepage — visitors don't know what's included`],suggestion:`Add a "What's included" section to the homepage naming the three to four products in the suite.`},{page:`Products`,url:`/products`,headline:`"Everything your business needs online"`,ctaType:`Demo`,ctaText:`"See it in action"`,language:`Feature-focused`,findings:[`Feature list comprehensive but outcome language absent`,`No case study adjacent to product descriptions`,`AI features mentioned but not demonstrated`],suggestion:`Add one outcome metric per product. Move case study quotes adjacent to each product section.`},{page:`Pricing`,url:`/pricing`,headline:`"Simple, transparent pricing"`,ctaType:`Enquiry`,ctaText:`"Contact sales"`,language:`Neutral`,findings:[`No package details visible without contacting sales`,`"Simple, transparent pricing" headline contradicts opaque pricing`,`No free trial or entry tier`],suggestion:`Add a package overview table with feature-level differentiation visible without a sales call. Add "Start free" entry tier.`}],changes:[{type:`pricing`,title:`Enterprise tier added`,detail:`Custom pricing tier added above Premium. No self-serve path to evaluate Enterprise features.`}],newContent:[{type:`service`,title:`AI recommendations feature launched`,detail:`New AI-powered marketing recommendations added to dashboard.`}],improvements:[{priority:`high`,area:`CTA`,title:`No DIY entry tier or free trial — 88% impact gap per GTM guide`,detail:`GTM guide identifies "no DIY → DIFM conversion path" as the highest-impact gap at 88%. A free trial tier is the natural acquisition funnel for the DIFM upgrade.`},{priority:`high`,area:`Pricing`,title:`Pricing opaque — "contact for pricing" kills self-serve evaluation`,detail:`Per GTM checklist: "No contact us for pricing on primary offering — kills self-serve conversion." Add package overview visible without a sales call.`},{priority:`medium`,area:`Services`,title:`DIFM post-launch care package not visible`,detail:`GTM guide: "DIFM packages that end at launch leave no stickiness." No ongoing care or managed services tier is visible — this is the natural LTV bridge.`}],emailDigest:`${r} (DIFM · ENT) has strong homepage messaging but no DIY entry tier — the #1 GTM gap at 88% impact. Pricing is opaque. Two growth signals: enterprise tier expansion and AI adoption. Strong Duda adoption overall.`,talkingPoints:[`No DIY entry path is the #1 revenue gap per GTM guide. Even a basic trial tier creates the natural upgrade funnel to your DIFM service.`,`Your homepage headline is genuinely strong — "Run your business, we handle your marketing" is outcome-led and direct. The problem is the product pages don't carry that framing through.`,`No post-launch care package visible — per GTM guide, this is the natural bridge from one-off DIFM to managed services. It's missing from every page.`],clientSummary:{headline:`Strong platform, two structural gaps to close`,highlights:[`Homepage outcome framing is industry-leading`,`Case study proof is extensive and specific`,`Duda adoption is strong at scale`],opportunities:[`Add DIY trial tier as entry point to DIFM funnel`,`Add pricing package overview visible without sales contact`]}},DIFM_SAAS:{summary:`${r} is a SaaS platform with DIFM web as part of an industry-specific software suite. Scanned across 6 pages. Web is positioned as a feature of the broader platform, not as a standalone offering — which is correct for this model. Key gaps: the web feature is undersold relative to how central it is to the client experience, and there's no upgrade path from the embedded web feature to a fuller DIFM package.`,score:6,riskLevel:`warn`,scoreBreakdown:{discoverability:6,pricing_clarity:6,cta_strength:6,offering_depth:7,duda_alignment:5,trust:8},pagesScanned:[`Homepage`,`Features`,`Pricing`,`Integrations`,`About`,`Contact`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's agency page positions web as a fully managed professional deliverable. This partner positions web as a platform feature alongside CRM, scheduling, and payments — which is appropriate for SaaS DIFM, but the web feature's impact on customer acquisition and retention is undersold.`,gaps:[`Web feature benefits (client-facing, lead generation) not surfaced on homepage or features page`,`No "your clients get a professional website" outcome language — only "website included" feature language`,`No upgrade path from embedded web to fuller DIFM package for clients who want more`,`White-label web capability not positioned as a competitive advantage for the SaaS platform`],strengths:[`Platform integration story is cohesive — web as part of the ops suite is a genuine differentiator`,`Pricing clarity is strong — per-seat or per-location pricing is visible and understandable`]},redFlags:[{type:`lead_form_broken`,severity:`warn`,title:`Web feature demo not available separately from full platform demo`,detail:`Prospects who want to evaluate the web feature specifically must book a full platform demo — no standalone web preview or template gallery visible.`,csmInsight:`"Adding a standalone "see your website" preview path would reduce demo friction for prospects who are evaluating the web feature specifically. It's a 30-minute Duda integration."`}],growthSignals:[{type:`ai_adoption`,title:`AI-powered content features added to platform`,detail:`New AI content generation mentioned in features section.`,csmInsight:`AI content is a direct Duda capability. Action: Show how Duda's AI generator can power this feature natively rather than requiring a custom build.`},{type:`vertical_expansion`,title:`New industry vertical added to platform coverage`,detail:`Platform now covers an additional industry category in the features section.`,csmInsight:`Vertical expansion means new website templates needed. Action: Share Duda's industry-specific template library for the new vertical.`}],dudaAdoption:{score:6,flexUsed:!0,widgetsDetected:[`dm-flex`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Basic Duda adoption. Opportunity to surface more of Duda's platform capabilities — booking widgets, e-commerce — within the SaaS context.`},pageFindings:[{page:`Homepage`,url:`/`,headline:`"The all-in-one platform for [industry]"`,ctaType:`Demo request`,ctaText:`"Book a demo"`,language:`Outcome-focused`,findings:[`Strong platform outcome framing`,`Web feature not mentioned in hero — buried in features list`,`No "your clients get a professional website" language`],suggestion:`Add web feature to the hero section: "Including a professional website that gets your clients found online."`},{page:`Features`,url:`/features`,headline:`"Everything you need to run your business"`,ctaType:`Demo`,ctaText:`"See all features"`,language:`Feature-focused`,findings:[`Web listed as one of many features with equal weight`,`No outcome language for the web feature specifically`,`No template gallery or preview accessible from this page`],suggestion:`Give the web feature its own section with outcome language: "A website that brings in new clients — included in every plan."`},{page:`Pricing`,url:`/pricing`,headline:`"Simple pricing for every business size"`,ctaType:`Purchase`,ctaText:`"Start free trial"`,language:`Outcome-focused`,findings:[`Pricing is clear and well-structured`,`Web feature listed in feature comparison but not outcome-framed`,`No recommended tier highlighted`],suggestion:`Mark recommended tier. Add "includes professional website" as a highlighted feature row.`}],changes:[{type:`service`,title:`AI content feature added to platform`,detail:`New AI content generation listed in features. No Duda attribution.`}],newContent:[{type:`service`,title:`New industry vertical added`,detail:`Platform coverage expanded to new industry category.`}],improvements:[{priority:`high`,area:`Homepage`,title:`Web feature absent from homepage hero`,detail:`The website feature is one of the most visible customer-facing deliverables in this platform. Not surfacing it in the hero is a significant opportunity cost — it's what makes the platform tangible to new prospects.`},{priority:`medium`,area:`Services`,title:`No upgrade path from embedded web to fuller DIFM package`,detail:`Per GTM guide, DIFM-SaaS partners should offer a "done-for-you" web upgrade for clients who want more than the embedded template. This is a natural LTV expansion that's currently missing.`},{priority:`medium`,area:`Pricing`,title:`No recommended tier — decision paralysis`,detail:`Per GTM checklist: "Most popular tier highlighted — anchors decision and increases conversion ~25%." This is a copy-only change with immediate impact.`}],emailDigest:`${r} (DIFM · SaaS) has a cohesive platform story but the web feature is undersold across all pages. Two growth signals: AI content and vertical expansion. Key gap: no web feature outcome language in the hero or features page.`,talkingPoints:[`Your web feature is the most visible thing your clients get — and it's not in your homepage hero. "Including a professional website that gets your clients found online" is one sentence that changes the whole value perception.`,`No recommended pricing tier across any page. Per GTM checklist, this is a 25% conversion lift for a copy-only change.`,`AI content is now listed as a feature — but it's a custom build when Duda's AI generator handles this natively. Let's talk about what that transition looks like.`],clientSummary:{headline:`Strong platform, web feature needs more prominence`,highlights:[`Platform integration story is cohesive and differentiated`,`Pricing is clear and well-structured`,`AI content launch shows innovation`],opportunities:[`Add web feature outcome language to homepage hero`,`Add recommended tier badge to pricing`]}}},s={DIY:{summary:`${r} is a direct self-serve website builder targeting SMBs. Scanned across 7 pages. The platform has a clear product but the homepage leads with action ("build your website") rather than outcome ("get online today"). Pricing is structured but no recommended tier is highlighted. No free preview path detected — all CTAs route to account creation.`,score:6,riskLevel:`warn`,scoreBreakdown:{discoverability:6,pricing_clarity:6,cta_strength:4,offering_depth:6,duda_alignment:4,trust:8},pagesScanned:[`Homepage`,`Website Builder`,`Pricing`,`Templates`,`Features`,`About`,`Contact`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's SaaS and hosts pages lead with outcome language and address the platform buyer. This partner speaks exclusively to end consumers. The reseller/white-label dimension is invisible, and there is no free preview path — both of which are listed as critical gaps in the DIY GTM checklist.`,gaps:[`No free tier or free trial — GTM checklist: "Free trial reduces friction by 50%+" — currently all CTAs require account creation`,`No AI-powered setup flow ("tell us about your business → instant draft") — Wix ADI model is the benchmark`,`Template gallery not filterable by industry/vertical — reduces time-to-first-publish by 60%`,`No clear DIY → DIFM upgrade path — GTM guide identifies this as 88% impact gap`,`No price anchor on product pages — pricing requires navigation to dedicated pricing page`],strengths:[`Pricing transparency is stronger than Duda's platform pages — specific prices visible`,`Customer count and trust signals are strong and visible`]},redFlags:[{type:`lead_form_broken`,severity:`warn`,title:`All CTAs route to account creation — no preview path`,detail:`Per GTM best practices: "Don't require account creation before showing the product — friction kills conversion." No template preview or builder preview accessible without signing up.`,csmInsight:`"GoDaddy and Wix let visitors start building before signing up. Partners who require sign-up first see 30–50% lower activation rates per GTM data. A live preview path is the highest-ROI change on this site."`}],growthSignals:[{type:`ai_adoption`,title:`AI website builder feature launched`,detail:`AI builder page added to main navigation with "build in minutes" positioning.`,csmInsight:`AI builder is live but has no demo. Action: Duda's AI builder shows a draft site before signup. Use this as the benchmark for what the demo path should look like.`},{type:`tier_shifting`,title:`Business and Pro tiers expanded`,detail:`Higher tiers with business features added above the standard plan.`,csmInsight:`Adding higher tiers is a natural signal that business users are outgrowing the basic plan. Action: Add a DIFM upgrade prompt for users who hit the builder limit — this is the 88% impact gap.`}],dudaAdoption:{score:4,flexUsed:!1,widgetsDetected:[],whitelabelIntact:!1,legacyWidgets:!1,insight:`No Duda footprint detected — proprietary platform. Strategic conversation is about Duda as the white-label builder infrastructure layer.`},pageFindings:[{page:`Homepage`,url:`/`,headline:`"Build your website today"`,ctaType:`Sign-up`,ctaText:`"Get started free"`,language:`Feature-focused`,findings:[`Hero leads with action, not outcome`,`No time claim or speed promise`,`Trust signals below the fold`],suggestion:`Rewrite hero as outcome + time: "Get online today — your website live in 10 minutes." Move trust badge above the fold.`},{page:`Website Builder`,url:`/website-builder`,headline:`"Build your own website"`,ctaType:`Sign-up`,ctaText:`"Try free"`,language:`Feature-focused`,findings:[`"Try free" routes to full signup — not a genuine free preview`,`Feature inventory leads: drag-and-drop, templates, mobile responsive`,`No industry-specific template preview`],suggestion:`Add live template preview before signup. Add industry filter to template gallery.`},{page:`AI Builder`,url:`/ai-builder`,headline:`"AI Website Builder"`,ctaType:`Sign-up`,ctaText:`"Try AI builder"`,language:`Feature-focused`,findings:[`Headline is product name only — no time claim`,`No demo or animated preview`,`Feature list: AI text, style suggestions`],suggestion:`Add time claim to H1: "From idea to website in 10 minutes." Add screen recording showing AI in action.`},{page:`Pricing`,url:`/pricing`,headline:`"Choose your plan"`,ctaType:`Purchase`,ctaText:`"Start free"`,language:`Neutral`,findings:[`4 tiers with no recommended option`,`Annual savings not prominently displayed`,`Feature comparison leads with technical specs`],suggestion:`Mark Pro tier as "Most popular." Show annual saving as "Save X/year" not just lower monthly price.`},{page:`Templates`,url:`/templates`,headline:`"Start with a template"`,ctaType:`Sign-up`,ctaText:`"Use this template"`,language:`Neutral`,findings:[`Good visual gallery`,`Not filterable by industry/vertical — GTM checklist item`,`No live preview before clicking`],suggestion:`Add industry/vertical filter. Add live preview iframe before signup CTA.`}],changes:[{type:`service`,title:`AI builder added to main navigation`,detail:`New AI builder page live. Feature-focused copy, no demo.`},{type:`pricing`,title:`Business tier added above Pro`,detail:`New top-tier with business features. No recommended badge on any tier.`}],newContent:[{type:`service`,title:`Template gallery expanded`,detail:`New templates added but still not filterable by industry.`}],improvements:[{priority:`high`,area:`CTA`,title:`No free preview path — 30–50% lower activation vs benchmark`,detail:`Per GTM guide: "No live demo/preview for DIY — partners who require sign-up first see 30–50% lower activation rates." A template preview before signup is the single highest-impact change.`},{priority:`high`,area:`Services`,title:`No DIY → DIFM conversion path — 88% impact gap`,detail:`Per GTM guide, this is the #1 revenue gap. Users who hit a wall in the builder should see a "want us to build it for you?" prompt. This conversion path is completely absent.`},{priority:`medium`,area:`Pricing`,title:`No recommended tier — decision paralysis at highest-intent moment`,detail:`Per GTM checklist: "Most popular tier highlighted — anchors decision and increases conversion ~25%." Copy-only change with immediate impact.`}],emailDigest:`${r} (DIY) has a solid product but two critical GTM gaps: no free preview path (30–50% activation impact) and no DIY→DIFM upgrade path (88% revenue impact). AI builder is live but has no demo. Good call prep.`,talkingPoints:[`No free preview before signup — GoDaddy and Wix benchmark show 30-50% lower activation when you require account creation first. A live template preview is the highest-ROI change on the site.`,`No DIY → DIFM path. Someone who gets stuck in your builder has no "want us to build it?" prompt. Per GTM data this is the #1 revenue gap at 88% impact.`,`AI builder is live but the page has no demo. Duda's AI builder shows a draft site before the user types a single word. Use that as the benchmark for what good looks like.`],clientSummary:{headline:`Solid product, two critical conversion gaps to close`,highlights:[`AI builder launch shows innovation`,`Pricing transparency is strong`,`Customer trust signals well-placed`],opportunities:[`Add free template preview before signup`,`Add DIY → DIFM upgrade prompt for users who get stuck`]}},DIY_SAAS_NON_V:{summary:`${r} is a horizontal SaaS platform with DIY web as part of a broader SMB business tool suite. Scanned across 6 pages. Web is one feature among many — which is correct for this model — but the web feature's contribution to the platform value is undersold. No free preview path and no DIFM upgrade option for users who want the site built for them.`,score:6,riskLevel:`warn`,scoreBreakdown:{discoverability:6,pricing_clarity:7,cta_strength:5,offering_depth:7,duda_alignment:4,trust:8},pagesScanned:[`Homepage`,`Website Feature`,`Pricing`,`Features`,`About`,`Contact`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's SaaS platform page positions the web builder as a revenue stream partners offer to their customers. This partner positions web as one of many features in an SMB tool — not as a client-facing, lead-generating asset. The outcome language that would resonate with the SMB buyer (more customers finding you online) is absent.`,gaps:[`Web feature not framed as lead-generation tool — "includes website" vs "get found by more customers"`,`No free preview for the web feature specifically`,`No DIFM upgrade path — users who want professional help have no path from the DIY builder`,`Template gallery not industry-specific — horizontal SaaS should still offer vertical templates`],strengths:[`Platform bundle positioning is cohesive — web as part of broader SMB suite is the right model`,`Pricing is clear and well-structured across the suite`]},redFlags:[],growthSignals:[{type:`tier_shifting`,title:`Professional and Agency tiers added to pricing`,detail:`New higher tiers added for resellers and agencies.`,csmInsight:`Adding reseller tiers is the Duda hosts/SaaS platform conversation. Action: Introduce Duda's white-label platform as the infrastructure that powers this reseller tier.`},{type:`ai_adoption`,title:`AI content tools added to the platform`,detail:`AI content generation now listed in the feature set.`,csmInsight:`AI content is a Duda native capability. Action: Position Duda's AI as the platform layer rather than a custom build.`}],dudaAdoption:{score:5,flexUsed:!0,widgetsDetected:[`dm-flex`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Basic Duda adoption. Opportunity to expand into booking, e-commerce, and AI features within the SaaS context.`},pageFindings:[{page:`Homepage`,url:`/`,headline:`"Everything a small business needs in one place"`,ctaType:`Free trial`,ctaText:`"Start free"`,language:`Outcome-focused`,findings:[`Good outcome framing at the suite level`,`Web feature not called out specifically in hero`,`No "get found online" or lead-generation language for the web component`],suggestion:`Add "including a website that gets you found on Google" to the hero sub-line.`},{page:`Website Feature`,url:`/features/website`,headline:`"Your business website, included"`,ctaType:`Sign-up`,ctaText:`"Start building"`,language:`Feature-focused`,findings:[`Headline is accurate but not compelling`,`Feature list: templates, mobile, SEO — no outcome`,`No preview or demo before signup`],suggestion:`Rewrite headline: "A website that brings you new customers — built in 10 minutes, included in every plan."`},{page:`Pricing`,url:`/pricing`,headline:`"Simple pricing, no surprises"`,ctaType:`Purchase`,ctaText:`"Start free"`,language:`Outcome-focused`,findings:[`Clear pricing structure`,`No recommended plan highlighted`,`Reseller/agency tier added but not prominently positioned`],suggestion:`Mark recommended tier. Add "includes professional website" as highlighted feature row.`}],changes:[{type:`pricing`,title:`Agency/reseller tier added to pricing`,detail:`New tier for businesses who want to offer the platform to their own clients.`}],newContent:[{type:`service`,title:`AI content tools added to platform`,detail:`AI writing assistance now in the feature set.`}],improvements:[{priority:`high`,area:`Services`,title:`Web feature framed as "included" not as lead-generation tool`,detail:`The web feature is the most visible customer-facing outcome of this platform. "Your website, included" undersells it. "Get found by more customers — your professional website, included in every plan" connects the feature to the SMB buyer's primary need.`},{priority:`high`,area:`CTA`,title:`No DIFM upgrade path for users who want help`,detail:`Per GTM guide: missing DIY → DIFM conversion path is 88% impact gap. A "want us to build it for you?" prompt for users who abandon the builder is the highest-revenue addition available.`},{priority:`medium`,area:`Pricing`,title:`No recommended tier — 25% conversion opportunity`,detail:`Per GTM checklist: "Most popular tier highlighted — anchors decision and increases conversion ~25%." Copy-only change.`}],emailDigest:`${r} (DIY · SaaS non-vertical) has a solid horizontal platform but the web feature is undersold. Two growth signals: reseller tier added + AI tools. Key gap: no DIFM upgrade path (88% revenue impact) and web feature framed as inclusion rather than outcome.`,talkingPoints:[`Your web feature is framed as "included" — but for your SMB customers, a website that gets them found on Google is the most valuable thing you offer. Lead with the outcome, not the feature.`,`Someone who gets stuck building their website has no "want us to build it?" path. That's the 88% revenue gap per GTM data.`,`You've added a reseller tier — that's the Duda hosts/platform conversation. Let me show you how Duda's white-label architecture powers exactly this model.`],clientSummary:{headline:`Strong platform bundle, web feature needs outcome framing`,highlights:[`Platform integration story is cohesive`,`Pricing is clear`,`Reseller tier signals market expansion`],opportunities:[`Reframe web feature as lead-generation tool`,`Add DIFM upgrade path for users who get stuck`]}},DIY_SAAS_VERT:{summary:`${r} is a vertical SaaS platform with built-in DIY web for a specific industry niche. Scanned across 7 pages. The platform has strong vertical specificity but the website feature is positioned as a product component rather than as a client-acquisition tool. No free preview path, no DIFM upgrade option, and the website feature benefits (getting the platform's clients found online) are absent from all pages.`,score:5,riskLevel:`warn`,scoreBreakdown:{discoverability:5,pricing_clarity:6,cta_strength:5,offering_depth:7,duda_alignment:4,trust:8},pagesScanned:[`Homepage`,`Website Feature`,`Pricing`,`Features`,`Integrations`,`About`,`Contact`],dudaComparison:{benchmarkUrl:a.benchmarkUrls[0],summary:`Duda's SaaS and hosts pages lead with platform operator language — 'give your customers a professional website.' This vertical SaaS partner speaks to the business operator end-user, not to the platform layer that could be reselling Duda. The white-label and reseller opportunity is invisible across all pages.`,gaps:[`Website feature not framed as client-acquisition tool for the vertical — "includes website" vs "your clients find you first on Google"`,`No white-label or reseller framing — the Duda hosts opportunity is completely invisible`,`No free preview of the website builder within the platform context`,`No DIFM upgrade path for platform users who want a professionally built site`,`Website feature page leads with feature inventory — no vertical-specific outcome language`],strengths:[`Vertical specificity is the strongest differentiator — no generic platform can match this depth`,`Platform integration story (web + CRM + scheduling + payments) is cohesive and compelling`,`Trust signals specific to the vertical are well-placed`]},redFlags:[{type:`page_404`,severity:`warn`,title:`Website feature demo not available without full platform signup`,detail:`No standalone preview of the website builder component — visitors must sign up for the full platform to evaluate the web feature.`,csmInsight:`"Adding a "see a sample website for [your vertical]" preview path would reduce demo friction for prospects evaluating the web component. A vertical-specific template preview before signup is a 30-minute Duda integration."`}],growthSignals:[{type:`ai_adoption`,title:`AI-powered features added to platform suite`,detail:`AI recommendations and automated content listed in features section.`,csmInsight:`AI adoption in the vertical context. Action: Position Duda's AI content generator as the infrastructure that powers this feature natively — avoiding a custom build.`},{type:`vertical_expansion`,title:`New sub-vertical or industry category added`,detail:`Platform coverage expanded to additional industry segment.`,csmInsight:`Vertical expansion means new website templates needed for the new segment. Action: Share Duda's vertical-specific template library.`}],dudaAdoption:{score:5,flexUsed:!0,widgetsDetected:[`dm-flex`],whitelabelIntact:!0,legacyWidgets:!1,insight:`Basic Duda adoption within vertical context. Opportunity to expand into booking widgets and vertical-specific features.`},pageFindings:[{page:`Homepage`,url:`/`,headline:`"The all-in-one platform for [vertical]"`,ctaType:`Demo`,ctaText:`"Book a demo"`,language:`Outcome-focused`,findings:[`Strong vertical outcome framing at the platform level`,`Website feature not mentioned in hero`,`No "your clients find you online" language`],suggestion:`Add to hero sub-line: "Including a professional website that gets your clients found by new customers."`},{page:`Website Feature`,url:`/features/website`,headline:`"Professional websites for [vertical]"`,ctaType:`Sign-up`,ctaText:`"Start free trial"`,language:`Feature-focused`,findings:[`Vertical-specific headline is good`,`Feature list: templates, mobile, SEO — no outcome for the end customer`,`No preview before signup`,`No case study showing web feature impact`],suggestion:`Reframe: "Your clients find you first — professional [vertical] websites that generate enquiries, included in every plan." Add one client success metric.`},{page:`Pricing`,url:`/pricing`,headline:`"Pricing for every [vertical] business"`,ctaType:`Free trial`,ctaText:`"Start free"`,language:`Outcome-focused`,findings:[`Clear pricing with vertical context`,`Website feature listed but not outcome-framed`,`No recommended tier`],suggestion:`Mark recommended tier. Add "includes professional website" as highlighted row with outcome: "get found by more customers."`}],changes:[{type:`service`,title:`AI features added to platform`,detail:`AI-powered content and recommendations listed in features.`},{type:`service`,title:`New vertical sub-category added`,detail:`Platform expanded to additional industry segment.`}],newContent:[{type:`service`,title:`Vertical-specific landing page added`,detail:`New dedicated page for the expanded vertical segment.`}],improvements:[{priority:`high`,area:`Homepage`,title:`Website feature absent from homepage hero`,detail:`For a vertical SaaS, the built-in website is often the most visible value-add for a prospect evaluating the platform. Not surfacing it in the hero means a key differentiator is invisible at the most critical evaluation moment.`},{priority:`high`,area:`CTA`,title:`No free preview of website builder component`,detail:`Per GTM guide: "No live demo/preview for DIY — 30-50% lower activation." Adding a vertical-specific template preview before signup is the highest-ROI conversion change available.`},{priority:`medium`,area:`Services`,title:`No DIFM upgrade path — 88% revenue gap`,detail:`Per GTM guide: missing DIY → DIFM path is the #1 revenue gap. Vertical SaaS users who want a professionally built site have no upgrade path from within the platform.`}],emailDigest:`${r} (DIY · SaaS vertical) has strong vertical depth but the web feature is undersold across all pages. No free preview path and no DIFM upgrade option. Two growth signals: AI adoption and vertical expansion. Key conversation: Duda as the white-label platform layer.`,talkingPoints:[`Your website feature is the most visible thing your clients get — but it's not in your hero. "Your clients find you first — professional [vertical] websites included" is one sentence that changes the whole value perception.`,`No preview before signup — a vertical-specific template preview before account creation is the highest-ROI change on this site. 30-50% activation improvement per GTM data.`,`The white-label and reseller layer is completely invisible on your site. That's the Duda hosts conversation — let me show you what 3 vertical SaaS partners in your space have done with it.`],clientSummary:{headline:`Strong vertical depth, web feature needs more prominence`,highlights:[`Vertical specificity is a genuine competitive moat`,`Platform integration story is cohesive`,`AI launch shows product innovation`],opportunities:[`Add web feature outcome language to homepage hero`,`Add vertical-specific template preview before signup`]}}},c={...o,...s}[t]||(n===`DIY`?s.DIY:o.DIFM_MM);return c.client_icp=t,c.client_flow=n,c}var S=`duda.co`;function C(e){return(e||`?`).split(` `).map(e=>e[0]).join(``).toUpperCase().slice(0,2)}function w(e){return new Date(e).toLocaleDateString(`en-US`,{month:`short`,day:`numeric`,year:`numeric`})}function T(e){return new Date(e).toLocaleTimeString(`en-US`,{hour:`2-digit`,minute:`2-digit`})}function E(e){return e===`admin`?`av-blue`:`av-green`}function D(e){return e>=8?`var(--success)`:e>=6?`var(--warn)`:`var(--danger)`}function O(e){return!e||Date.now()>new Date(e).getTime()+21*864e5}function ce(e){if(!e)return`Never scanned`;let t=new Date(e).getTime()+21*864e5,n=Math.max(0,Math.ceil((t-Date.now())/864e5));return n===0?`Due today`:`In ${n}d (${w(t)})`}function le(e){return e?e.includes(`@`)?e.split(`@`)[1]===`duda.co`?null:`Only @${S} addresses are allowed`:`Enter a valid email`:`Email is required`}var ue;function k(e,t=``){let n=document.getElementById(`_toast`);n||(n=document.createElement(`div`),n.id=`_toast`,n.className=`toast`,document.body.appendChild(n)),n.textContent=e,n.style.opacity=`1`,n.style.background=t===`danger`?`#991b1b`:t===`success`?`#065f46`:`#111827`,clearTimeout(ue),ue=setTimeout(()=>n.style.opacity=`0`,3200)}function A(){document.getElementById(`_modal`)?.remove()}function j(e){A();let t=document.createElement(`div`);t.id=`_modal`,t.innerHTML=`<div class="overlay" id="_overlay">${e}</div>`,document.body.appendChild(t),document.getElementById(`_overlay`).addEventListener(`click`,e=>{e.target===e.currentTarget&&A()})}function de(e,t){let n=document.getElementById(e)?.value||``,r=document.getElementById(t);if(!r)return;let i=0;n.length>=8&&i++,/[A-Z]/.test(n)&&i++,/[0-9]/.test(n)&&i++,/[^A-Za-z0-9]/.test(n)&&i++;let a=[`var(--danger)`,`var(--warn)`,`var(--warn)`,`var(--success)`];r.style.width=i*25+`%`,r.style.background=a[i-1]||`var(--border)`}function fe(e){let t=document.getElementById(e);t&&(t.type=t.type===`password`?`text`:`password`)}var pe=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke-width="2"/></svg>`,M=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke-width="2"/></svg>`,N=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-width="2"/></svg>`,P=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-width="2"/></svg>`,me=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" stroke-width="2"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke-width="2"/></svg>`,F=`<svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke-width="2"/></svg>`,I=`<svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19" stroke-width="2.5"/><line x1="5" y1="12" x2="19" y2="12" stroke-width="2.5"/></svg>`,L=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" stroke-width="2"/><path d="M7 11V7a5 5 0 0110 0v4" stroke-width="2"/></svg>`,R=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3"/></svg>`,z=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" stroke-width="2"/></svg>`,B=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke-width="2"/></svg>`,he=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" stroke-width="2"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" stroke-width="2"/></svg>`;function ge(){return`
+  <div class="login-screen">
+    <div class="login-card">
+      <div class="login-eyebrow">Duda · Internal Tool</div>
+      <div class="login-title">Site Scanner</div>
+      <div class="login-sub">Strategic Account Manager portal</div>
+      <div class="login-domain">${L}
+        Restricted to <strong style="color:var(--text);margin:0 3px">@${S}</strong> accounts only
+      </div>
+      ${`
+      <div class="alert alert-warn" style="margin-bottom:16px">
+        ${L}
+        <span><strong>Demo mode</strong> — Supabase not connected. Use any @duda.co email + password <code>demo</code>.<br>
+        <a href="https://github.com/your-org/duda-scanner#setup" style="color:var(--warn)">Connect Supabase →</a></span>
+      </div>`}
+      <div class="fg">
+        <label class="flabel">Work email</label>
+        <input class="finput" id="l-email" type="email" placeholder="name@${S}" autocomplete="email">
+        <div class="ferr" id="l-email-err"></div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Password <span style="color:var(--text3);font-weight:400">(type: demo)</span></label>
+        <div class="pw-wrap">
+          <input class="finput" id="l-pw" type="password" placeholder="••••••••" autocomplete="current-password">
+          <button class="pw-toggle" type="button" onclick="document.getElementById('l-pw').type = document.getElementById('l-pw').type === 'password' ? 'text' : 'password'">${B}</button>
+        </div>
+        <div class="ferr" id="l-pw-err"></div>
+      </div>
+      <div class="ferr" id="l-gen-err" style="margin-bottom:10px"></div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;padding:10px" id="l-btn">
+        Sign in
+      </button>
+      <div style="margin-top:14px;text-align:center;font-size:11px;color:var(--text3)">
+        No account? Contact your team Admin.
+      </div>
+    </div>
+  </div>`}function _e(e){let t=document.getElementById(`l-btn`);if(!t)return;let r=async()=>{let r=(document.getElementById(`l-email`)?.value||``).trim().toLowerCase(),i=document.getElementById(`l-pw`)?.value||``;if(ve(),!r.endsWith(`@duda.co`)){V(`email`,`Only @${S} addresses allowed`);return}if(!i){V(`pw`,`Password is required`);return}t.disabled=!0,t.textContent=`Signing in…`;let{data:a,error:o}=await te(r,i);if(o){t.disabled=!1,t.textContent=`Sign in`,V(`gen`,o.message||`Sign in failed`);return}let s=await f(a.session.user.id);if(!s){V(`gen`,`Account not found. Contact your Admin.`),t.disabled=!1,t.textContent=`Sign in`;return}if(s.status===`suspended`){V(`gen`,`Your account is suspended. Contact an Admin.`),t.disabled=!1,t.textContent=`Sign in`;return}n.session=a.session,n.member=s,e()};t.addEventListener(`click`,r),document.getElementById(`l-pw`)?.addEventListener(`keydown`,e=>{e.key===`Enter`&&r()})}function ve(){[`l-email-err`,`l-pw-err`,`l-gen-err`].forEach(e=>{let t=document.getElementById(e);t&&(t.style.display=`none`,t.classList.remove(`show`))}),document.getElementById(`l-email`)?.classList.remove(`err`),document.getElementById(`l-pw`)?.classList.remove(`err`)}function V(e,t){if(e===`gen`){let e=document.getElementById(`l-gen-err`);e&&(e.textContent=t,e.style.display=`block`,e.classList.add(`show`));return}let n=document.getElementById(`l-${e}-err`);n&&(n.textContent=t,n.classList.add(`show`)),document.getElementById(`l-${e}`)?.classList.add(`err`)}var ye=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke-width="2"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3"/></svg>`,be=`<svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke-width="2"/><polyline points="17 6 23 6 23 12" stroke-width="2"/></svg>`;function H(){let e=r()?n.clients:n.clients.filter(e=>e.am_id===n.member.id),t=e.filter(e=>O(e.last_scan)),i=n.scans.filter(t=>e.find(e=>e.id===t.client_id)),a=i.slice(0,6),o=i.flatMap(e=>(e.result?.redFlags||[]).map(t=>({...t,scan:e}))),s=i.flatMap(e=>(e.result?.growthSignals||[]).map(t=>({...t,scan:e}))),c=o.filter(e=>e.severity===`critical`),l=o.filter(e=>e.severity===`warn`),u=e=>({tier_shifting:`Tier shift`,vertical_expansion:`New vertical`,content_velocity:`Content growth`,ai_adoption:`AI adoption`,competitor_detected:`Competitor detected`,page_404:`Page 404`,lead_form_broken:`Form broken`,ssl_expiry:`SSL expiry`,duda_removed:`Duda removed`})[e]||e,d=e=>e===`critical`?`<span class="badge badge-red"><span class="dot"></span>Critical</span>`:e===`warn`?`<span class="badge badge-amber"><span class="dot"></span>Warning</span>`:`<span class="badge badge-green"><span class="dot"></span>Clear</span>`;return`
+  <div class="stat-grid stat-grid-4">
+    <div class="stat-card">
+      <div class="stat-lbl">${r()?`All clients`:`My clients`}</div>
+      <div class="stat-val">${e.length}</div>
+      <div class="stat-sub">Monitored sites</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-lbl">Due for scan</div>
+      <div class="stat-val" style="color:${t.length>0?`var(--warn)`:`var(--success)`}">${t.length}</div>
+      <div class="stat-sub">${t.length>0?`Overdue or never scanned`:`All up to date`}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-lbl">Critical flags</div>
+      <div class="stat-val" style="color:${c.length>0?`var(--danger)`:`var(--success)`}">${c.length}</div>
+      <div class="stat-sub">${c.length>0?`Need immediate action`:`All clear`}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-lbl">Growth signals</div>
+      <div class="stat-val" style="color:${s.length>0?`var(--brand)`:`var(--text3)`}">${s.length}</div>
+      <div class="stat-sub">${s.length>0?`Expansion opportunities`:`None this cycle`}</div>
+    </div>
+  </div>
+
+  ${t.length>0?`
+  <div class="alert alert-warn" style="margin-bottom:14px">
+    ${R}<span><strong>${t.length} site${t.length>1?`s`:``}</strong> due for scanning: ${t.map(e=>e.name).join(`, `)}</span>
+  </div>`:``}
+
+  ${c.length>0?`
+  <div style="background:var(--danger-bg);border:1px solid var(--danger-border);border-radius:var(--rl);padding:16px 18px;margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span style="color:var(--danger)">${ye}</span>
+      <span style="font-size:12px;font-weight:600;color:var(--danger)">${c.length} critical flag${c.length>1?`s`:``} — immediate action required</span>
+    </div>
+    ${c.slice(0,3).map(e=>{let t=n.clients.find(t=>t.id===e.scan?.client_id);return`<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;padding:10px 12px;background:rgba(220,38,38,.06);border-radius:var(--r);border-left:3px solid var(--danger)">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:11px;font-weight:700;color:var(--danger);margin-bottom:2px;text-transform:uppercase;letter-spacing:.4px">${u(e.type)} · ${t?.name||`Unknown`}</div>
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px">${e.title}</div>
+          <div style="font-size:11px;color:var(--text2);line-height:1.5">${e.csmInsight}</div>
+        </div>
+        <button class="btn btn-danger btn-xs" data-action="viewScan" data-id="${e.scan?.id}" style="flex-shrink:0">View →</button>
+      </div>`}).join(``)}
+    ${c.length>3?`<div style="font-size:11px;color:var(--danger);margin-top:4px">+ ${c.length-3} more critical flag${c.length-3>1?`s`:``} — check scan history</div>`:``}
+  </div>`:``}
+
+  ${l.length>0&&c.length===0?`
+  <div style="background:var(--warn-bg);border:1px solid var(--warn-border);border-radius:var(--rl);padding:14px 18px;margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      ${R}
+      <span style="font-size:12px;font-weight:600;color:var(--warn)">${l.length} warning${l.length>1?`s`:``} detected across your clients</span>
+    </div>
+    ${l.slice(0,2).map(e=>`<div style="font-size:11px;color:var(--warn);margin-bottom:4px;display:flex;gap:6px"><span>⚠</span><span><strong>${n.clients.find(t=>t.id===e.scan?.client_id)?.name}:</strong> ${e.title}</span></div>`).join(``)}
+  </div>`:``}
+
+  ${s.length>0?`
+  <div style="background:var(--brand-light);border:1px solid var(--brand-mid);border-radius:var(--rl);padding:16px 18px;margin-bottom:14px">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+      <span style="color:var(--brand)">${be}</span>
+      <span style="font-size:12px;font-weight:600;color:var(--brand)">${s.length} growth signal${s.length>1?`s`:``} — expansion opportunities detected</span>
+    </div>
+    ${s.slice(0,3).map(e=>{let t=n.clients.find(t=>t.id===e.scan?.client_id);return`<div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;padding:10px 12px;background:rgba(29,78,216,.06);border-radius:var(--r);border-left:3px solid var(--brand)">
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+            <span style="font-size:9px;font-weight:700;background:var(--brand);color:#fff;padding:1px 6px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px">${u(e.type)}</span>
+            <span style="font-size:11px;font-weight:600;color:var(--brand)">${t?.name||`Unknown`}</span>
+          </div>
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px">${e.title}</div>
+          <div style="font-size:11px;color:var(--text2);line-height:1.5">${e.csmInsight}</div>
+        </div>
+        <button class="btn btn-ghost btn-xs" data-action="viewScan" data-id="${e.scan?.id}" style="flex-shrink:0">View →</button>
+      </div>`}).join(``)}
+    ${s.length>3?`<div style="font-size:11px;color:var(--brand);margin-top:4px">+ ${s.length-3} more growth signal${s.length-3>1?`s`:``} in scan history</div>`:``}
+  </div>`:``}
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-hd">
+      <div class="card-title">${N} Recent scans</div>
+      <button class="btn btn-ghost btn-xs" data-nav="scans">View all →</button>
+    </div>
+    ${a.length===0?`
+    <div class="empty">
+      <div class="empty-icon">${F}</div>
+      <div class="empty-title">No scans yet</div>
+      <div class="empty-sub">Add a client and run your first AI scan</div>
+      <button class="btn btn-primary btn-sm" data-action="openScanPicker">Run first scan</button>
+    </div>`:`
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Client</th><th>Scanned</th><th>Risk</th><th>Red flags</th><th>Growth signals</th><th>Score</th><th></th></tr></thead>
+      <tbody>
+        ${a.map(e=>{let t=n.clients.find(t=>t.id===e.client_id),r=e.result?.riskLevel||`ok`,i=e.result?.redFlags?.length||0,a=e.result?.growthSignals?.length||0,o=e.result?.score||`—`;return`<tr>
+            <td>
+              <div style="font-weight:600">${t?.name||`Unknown`}</div>
+              <div class="mono" style="color:var(--text3)">${(t?.url||``).replace(/^https?:\/\//,``).slice(0,28)}</div>
+            </td>
+            <td style="color:var(--text2);font-size:11px">${w(e.created_at)}</td>
+            <td>${d(r)}</td>
+            <td>${i>0?`<span class="badge badge-red">${i}</span>`:`<span class="badge badge-gray">0</span>`}</td>
+            <td>${a>0?`<span class="badge badge-blue">${a}</span>`:`<span class="badge badge-gray">0</span>`}</td>
+            <td><strong style="color:${D(o)}">${o}/10</strong></td>
+            <td><button class="btn btn-ghost btn-xs" data-action="viewScan" data-id="${e.id}">View →</button></td>
+          </tr>`}).join(``)}
+      </tbody>
+    </table></div>`}
+  </div>
+
+  ${e.length>0?`
+  <div class="card">
+    <div class="card-hd"><div class="card-title">${M} Site status</div></div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Client</th><th>Last scan</th><th>Next scan</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        ${e.map(e=>`<tr>
+          <td>
+            <div style="font-weight:600">${e.name}</div>
+            <div class="mono" style="color:var(--text3)">${e.url.replace(/^https?:\/\//,``).slice(0,32)}</div>
+          </td>
+          <td style="color:var(--text2)">${e.last_scan?w(e.last_scan):`—`}</td>
+          <td style="color:var(--text2);font-size:11px">${ce(e.last_scan)}</td>
+          <td>${O(e.last_scan)?`<span class="badge badge-amber"><span class="dot"></span>Due</span>`:`<span class="badge badge-green"><span class="dot"></span>OK</span>`}</td>
+          <td><button class="btn btn-ghost btn-xs" data-action="runScan" data-id="${e.id}">Scan now</button></td>
+        </tr>`).join(``)}
+      </tbody>
+    </table></div>
+  </div>`:``}`}var U=[{id:`DIFM_MM`,flow:`DIFM`,label:`DIFM · MM`,full:`DIFM — Mid-Market Agency`,desc:`Agency builds websites for SMB clients as primary service`,example:`Localsearch, djmdigital.be, olivestreetdesign.com`,benchmarkUrls:[`https://www.duda.co/solutions/agencies`],color:`badge-blue`},{id:`DIFM_ENT`,flow:`DIFM`,label:`DIFM · ENT`,full:`DIFM — Enterprise`,desc:`Large-scale done-for-me at enterprise volume`,example:`Solocal, Thryv, Hibu`,benchmarkUrls:[`https://www.duda.co/solutions/agencies`],color:`badge-blue`},{id:`DIFM_SAAS`,flow:`DIFM`,label:`DIFM · SaaS`,full:`DIFM — SaaS`,desc:`SaaS platform with DIFM web as part of industry software`,example:`Cloudbeds, AppFolio, HouseCallPro`,benchmarkUrls:[`https://www.duda.co/solutions/agencies`],color:`badge-blue`},{id:`DIY`,flow:`DIY`,label:`DIY`,full:`DIY — Direct`,desc:`Pure self-serve builder targeting SMBs direct-to-consumer`,example:`Wix, IONOS`,benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],color:`badge-green`},{id:`DIY_SAAS_NON_V`,flow:`DIY`,label:`DIY · SaaS`,full:`DIY — SaaS (non-vertical)`,desc:`Horizontal SaaS with embedded DIY web as part of broader SMB suite`,example:`TailorBrands, ZenBusiness`,benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],color:`badge-green`},{id:`DIY_SAAS_VERT`,flow:`DIY`,label:`DIY · SaaS vert`,full:`DIY — SaaS (vertical)`,desc:`Vertical SaaS with built-in DIY web for a specific niche`,example:`PlayHQ, Smoobu, Bokun`,benchmarkUrls:[`https://www.duda.co/solutions/saas-platforms`,`https://www.duda.co/solutions/hosts`],color:`badge-green`}];function W(e){return U.find(t=>t.id===e)||null}function G(e){return e?e.benchmarkUrls.map(e=>e.replace(`https://www.`,``)).join(` + `):`—`}function xe(e){let t=W(e);return t?`<span class="badge ${t.color}" title="${t.full}">${t.label}</span>`:`<span class="badge badge-gray">—</span>`}function Se(e,t){let n=U.filter(e=>e.flow===`DIFM`),r=U.filter(e=>e.flow===`DIY`);function i(n,r){return`
+    <div style="margin-bottom:10px">
+      <div style="font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;
+                  letter-spacing:.5px;margin-bottom:6px">${r}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+        ${n.map(n=>`
+        <div class="role-opt ${n.id===e?`sel`:``}"
+             id="${t}-${n.id}"
+             data-action="setIcp"
+             data-prefix="${t}"
+             data-icp="${n.id}"
+             style="cursor:pointer;padding:8px 10px">
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">
+            <span class="badge ${n.color}" style="font-size:9px">${n.label}</span>
+          </div>
+          <div class="role-opt-desc" style="font-size:10px;font-weight:600;color:var(--text);margin-bottom:1px">${n.full.replace(/^(DIY|DIFM) — /,``)}</div>
+          <div class="role-opt-desc" style="font-size:10px">${n.desc}</div>
+        </div>`).join(``)}
+      </div>
+    </div>`}return`
+  <div id="${t}-grid">
+    ${i(n,`DIFM — Done for me (agency builds)`)}
+    ${i(r,`DIY — Do it yourself (client / end-user builds)`)}
+  </div>`}function Ce(){return n.clients.length?`<div class="card"><div class="tbl-wrap"><table>
+    <thead><tr><th>Client</th><th>URL</th><th>ICP</th><th>AM owner</th><th>Last scan</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+      ${n.clients.map(e=>{let t=n.members.find(t=>t.id===e.am_id),r=i(e);return`<tr>
+          <td>
+            <div style="font-weight:600">${e.name}</div>
+            ${e.notes?`<div style="font-size:11px;color:var(--text3)">${e.notes}</div>`:``}
+          </td>
+          <td><span class="mono" style="color:var(--brand)">${e.url.replace(/^https?:\/\//,``).slice(0,30)}</span></td>
+          <td>${xe(e.client_icp)}</td>
+          <td>
+            ${t?`<div style="display:flex;align-items:center;gap:7px">
+                   <div class="av av-24 ${E(t.role)}">${C(t.name)}</div>
+                   <span style="font-size:11px">${t.name.split(` `)[0]}</span>
+                 </div>`:`<span style="color:var(--text3);font-size:11px">Unassigned</span>`}
+          </td>
+          <td style="color:var(--text2);font-size:11px">${e.last_scan?w(e.last_scan):`Never`}</td>
+          <td>${O(e.last_scan)?`<span class="badge badge-amber"><span class="dot"></span>Due</span>`:`<span class="badge badge-green"><span class="dot"></span>OK</span>`}</td>
+          <td>
+            <div style="display:flex;gap:5px;flex-wrap:wrap">
+              <button class="btn btn-secondary btn-xs" data-action="runScan" data-id="${e.id}">${F} Scan</button>
+              ${r?`<button class="btn btn-ghost btn-xs" data-action="openEditClientModal" data-id="${e.id}">Edit</button>`:``}
+              ${r?`<button class="btn btn-danger btn-xs" data-action="deleteClient" data-id="${e.id}">Remove</button>`:`<span class="chip">View only</span>`}
+            </div>
+          </td>
+        </tr>`}).join(``)}
+    </tbody>
+  </table></div></div>`:`
+    <div class="empty">
+      <div class="empty-icon">${M}</div>
+      <div class="empty-title">No clients yet</div>
+      <div class="empty-sub">Add your first client site to start monitoring</div>
+      <button class="btn btn-primary btn-sm" data-action="openAddClientModal">${I} Add client</button>
+    </div>`}var K=`DIFM_MM`;function we(){K=`DIFM_MM`;let e=n.members.filter(e=>e.status===`active`).map(e=>`<option value="${e.id}" ${e.id===n.member.id?`selected`:``}>${e.name}</option>`).join(``);j(`<div class="modal" style="max-width:640px">
+    <div class="modal-hd">
+      <div class="modal-title">Add client site</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="frow">
+        <div class="fg"><label class="flabel">Client name *</label><input class="finput" id="ac-name" placeholder="Acme Digital Agency"></div>
+        <div class="fg"><label class="flabel">Website URL *</label><input class="finput" id="ac-url" placeholder="https://www.client.com"></div>
+      </div>
+      <div class="fg">
+        <label class="flabel">ICP classification *</label>
+        ${Se(`DIFM_MM`,`ac-fp`)}
+        <div class="fhint" id="ac-fp-hint" style="margin-top:6px">
+          Benchmark: <strong>duda.co/solutions/agencies</strong> — AI will compare messaging against this
+        </div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Assign to AM</label>
+        <select class="fselect" id="ac-am"><option value="">Unassigned</option>${e}</select>
+      </div>
+      <div class="fg">
+        <label class="flabel">Notes</label>
+        <input class="finput" id="ac-notes" placeholder="e.g. SaaS platform, 5k+ end users">
+        <div class="fhint">Context helps the AI tailor scan recommendations</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="ac-save-btn">Add client</button>
+    </div>
+  </div>`),document.getElementById(`ac-save-btn`).addEventListener(`click`,async()=>{let e=document.getElementById(`ac-name`).value.trim(),t=document.getElementById(`ac-url`).value.trim(),n=document.getElementById(`ac-am`).value||null,r=document.getElementById(`ac-notes`).value.trim();if(!e||!t){k(`Name and URL are required`,`danger`);return}t.startsWith(`http`)||(t=`https://`+t);let i=W(K),{error:a}=await m({name:e,url:t,am_id:n,notes:r,client_icp:K,client_flow:i?.flow||`DIFM`});if(a){k(a.message,`danger`);return}A(),window._reloadAndRender(`clients`),k(`${e} added`,`success`)})}function Te(e,t){let n=W(t);if(!n)return;e===`ac-fp`?K=t:e===`ec-fp`&&(q=t);let r=document.getElementById(`${e}-hint`);r&&n&&(r.innerHTML=`Benchmark: <strong>${G(n)}</strong> — AI will compare messaging against this`),U.forEach(n=>{let r=document.getElementById(`${e}-${n.id}`);r&&r.classList.toggle(`sel`,n.id===t)})}var q=`DIFM_MM`;function Ee(e){let t=n.clients.find(t=>t.id===e);if(!t)return;q=t.client_icp||`DIFM_MM`;let i=W(q),a=n.members.filter(e=>e.status===`active`).map(e=>`<option value="${e.id}" ${t.am_id===e.id?`selected`:``}>${e.name}</option>`).join(``);j(`<div class="modal" style="max-width:640px">
+    <div class="modal-hd">
+      <div class="modal-title">Edit client</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="frow">
+        <div class="fg"><label class="flabel">Client name</label><input class="finput" id="ec-name" value="${t.name}"></div>
+        <div class="fg"><label class="flabel">Website URL</label><input class="finput" id="ec-url" value="${t.url}"></div>
+      </div>
+      <div class="fg">
+        <label class="flabel">ICP classification</label>
+        ${Se(q,`ec-fp`)}
+        <div class="fhint" id="ec-fp-hint" style="margin-top:6px">
+          Benchmark: <strong>${i?G(i):`—`}</strong> — AI will compare messaging against this
+        </div>
+      </div>
+      ${r()?`<div class="fg"><label class="flabel">Assign to AM</label>
+        <select class="fselect" id="ec-am"><option value="">Unassigned</option>${a}</select>
+      </div>`:``}
+      <div class="fg"><label class="flabel">Notes</label><input class="finput" id="ec-notes" value="${t.notes||``}"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="ec-save-btn">Save</button>
+    </div>
+  </div>`),document.getElementById(`ec-save-btn`).addEventListener(`click`,async()=>{let n=W(q),i={name:document.getElementById(`ec-name`).value.trim()||t.name,url:document.getElementById(`ec-url`).value.trim()||t.url,notes:document.getElementById(`ec-notes`).value.trim(),client_icp:q,client_flow:n?.flow||`DIFM`};r()&&(i.am_id=document.getElementById(`ec-am`)?.value||null);let{error:a}=await h(e,i);if(a){k(a.message,`danger`);return}A(),window._reloadAndRender(`clients`),k(`Client updated`)})}async function De(e){let t=n.clients.find(t=>t.id===e);confirm(`Remove ${t?.name} from monitoring?`)&&(await g(e),window._reloadAndRender(`clients`),k(`Client removed`))}var Oe=e=>({tier_shifting:`Tier shift`,vertical_expansion:`New vertical`,content_velocity:`Content growth`,ai_adoption:`AI adoption`,competitor_detected:`Competitor`,page_404:`Page 404`,lead_form_broken:`Form broken`,ssl_expiry:`SSL expiry`,duda_removed:`Duda removed`})[e]||e,ke=e=>e===`critical`?`<span class="badge badge-red"><span class="dot"></span>Critical</span>`:e===`warn`?`<span class="badge badge-amber"><span class="dot"></span>Warning</span>`:`<span class="badge badge-green"><span class="dot"></span>Clear</span>`;function Ae(){let e=r()?n.clients:n.clients.filter(e=>e.am_id===n.member.id),t=new Set(e.map(e=>e.id)),i=n.scans.filter(e=>t.has(e.client_id));return i.length?`<div class="card"><div class="tbl-wrap"><table>
+    <thead><tr><th>Client</th><th>Scanned</th><th>Risk</th><th>Red flags</th><th>Growth signals</th><th>Score</th><th></th></tr></thead>
+    <tbody>
+      ${i.map(e=>{let t=n.clients.find(t=>t.id===e.client_id),r=e.result?.riskLevel||`ok`,i=e.result?.redFlags?.length||0,a=e.result?.growthSignals?.length||0,o=e.result?.score||`—`;return`<tr>
+          <td>
+            <div style="font-weight:600">${t?.name||`Unknown`}</div>
+            <div class="mono" style="color:var(--text3)">${(t?.url||``).replace(/^https?:\/\//,``).slice(0,28)}</div>
+          </td>
+          <td style="font-size:11px;color:var(--text2)">${w(e.created_at)}<br>${T(e.created_at)}</td>
+          <td>${ke(r)}</td>
+          <td>${i>0?`<span class="badge badge-red">${i}</span>`:`<span class="badge badge-gray">0</span>`}</td>
+          <td>${a>0?`<span class="badge badge-blue">${a}</span>`:`<span class="badge badge-gray">0</span>`}</td>
+          <td><strong style="color:${D(o)}">${o}/10</strong></td>
+          <td><button class="btn btn-ghost btn-xs" data-action="viewScan" data-id="${e.id}">View →</button></td>
+        </tr>`}).join(``)}
+    </tbody>
+  </table></div></div>`:`
+    <div class="empty">
+      <div class="empty-icon">${N}</div>
+      <div class="empty-title">No scan history yet</div>
+      <div class="empty-sub">Run your first scan to see results here</div>
+      <button class="btn btn-primary btn-sm" data-action="openScanPicker">Run scan</button>
+    </div>`}function je(e){let t=n.scans.find(t=>t.id===e);if(!t)return`<div class="empty"><div class="empty-title">Scan not found</div></div>`;let r=n.clients.find(e=>e.id===t.client_id),i=n.members.find(e=>e.id===r?.am_id),a=t.result||{},o=a.score||`—`,s=a.riskLevel||`ok`;(typeof import_meta_env<`u`?import_meta_env:window.__ENV__||{}).VITE_EMAIL_ENABLED,r?.client_flow||a.client_flow;let c=r?.client_icp||a.client_icp||null,l=c?{DIFM_MM:{label:`DIFM · MM`,full:`Mid-Market Agency`,color:`badge-blue`},DIFM_ENT:{label:`DIFM · ENT`,full:`Enterprise`,color:`badge-blue`},DIFM_SAAS:{label:`DIFM · SaaS`,full:`SaaS (DIFM)`,color:`badge-blue`},DIY:{label:`DIY`,full:`DIY Direct`,color:`badge-green`},DIY_SAAS_NON_V:{label:`DIY · SaaS`,full:`SaaS (non-vertical)`,color:`badge-green`},DIY_SAAS_VERT:{label:`DIY · SaaS vert`,full:`SaaS (vertical)`,color:`badge-green`}}[c]:null,u=e=>e===`critical`?`<span class="badge badge-red">Critical</span>`:`<span class="badge badge-amber">Warning</span>`,d=e=>`<span style="font-size:9px;font-weight:700;background:var(--brand);color:#fff;padding:1px 6px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px">${Oe(e)}</span>`;return`
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap">
+    <button class="btn btn-ghost btn-xs" data-nav="scans">← Back to history</button>
+    <span style="color:var(--text3)">|</span>
+    <span style="font-weight:600">${r?.name||`Unknown client`}</span>
+    <span class="badge badge-gray">${w(t.created_at)}, ${T(t.created_at)}</span>
+    ${ke(s)}
+    ${l?`<span class="badge ${l.color}" title="${l.full}">${l.label}</span>`:``}
+  </div>
+
+  <div class="stat-grid stat-grid-4" style="margin-bottom:16px">
+    <div class="stat-card"><div class="stat-lbl">Overall score</div><div class="stat-val" style="color:${D(o)}">${o}/10</div></div>
+    <div class="stat-card"><div class="stat-lbl">Pages scanned</div><div class="stat-val" style="color:var(--brand)">${a.pagesScanned?.length||`—`}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Red flags</div><div class="stat-val" style="color:${a.redFlags?.length>0?`var(--danger)`:`inherit`}">${a.redFlags?.length||0}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Growth signals</div><div class="stat-val" style="color:${a.growthSignals?.length>0?`var(--brand)`:`inherit`}">${a.growthSignals?.length||0}</div></div>
+  </div>
+
+  ${a.pagesScanned?.length?`
+  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;padding:9px 12px;background:var(--surface2);border-radius:var(--r);border:0.5px solid var(--border)">
+    <span style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px">Pages scanned</span>
+    ${a.pagesScanned.map(e=>`<span class="chip">${e}</span>`).join(``)}
+  </div>`:``}
+
+  <div style="display:grid;grid-template-columns:1fr 350px;gap:16px;align-items:start">
+
+    <!-- Left column -->
+    <div>
+
+      <!-- Executive summary -->
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">Executive summary</div></div>
+        <div class="card-body"><p style="line-height:1.7;color:var(--text2)">${a.summary||`No summary available.`}</p></div>
+      </div>
+
+      <!-- Duda comparison -->
+      ${a.dudaComparison?`
+      <div class="card" style="margin-bottom:14px;border-color:#BFDBFE">
+        <div class="card-hd" style="background:#EFF6FF">
+          <div class="card-title" style="color:#1D4ED8">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke-width="2"/></svg>
+            Duda comparison
+          </div>
+          <a href="${a.dudaComparison.benchmarkUrl}" style="font-size:10px;color:var(--brand);font-family:var(--mono);text-decoration:none" target="_blank">${a.dudaComparison.benchmarkUrl.replace(`https://www.`,``)}</a>
+        </div>
+        <div class="card-body">
+          <p style="font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:12px">${a.dudaComparison.summary}</p>
+          ${a.dudaComparison.gaps?.length?`
+          <div style="margin-bottom:12px">
+            <div style="font-size:10px;font-weight:700;color:var(--danger);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px">Gaps vs Duda</div>
+            ${a.dudaComparison.gaps.map(e=>`
+            <div style="display:flex;gap:8px;margin-bottom:6px;font-size:12px;line-height:1.5">
+              <span style="color:var(--danger);flex-shrink:0;font-weight:700">✗</span>${e}
+            </div>`).join(``)}
+          </div>`:``}
+          ${a.dudaComparison.strengths?.length?`
+          <div>
+            <div style="font-size:10px;font-weight:700;color:var(--success);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px">Strengths vs Duda</div>
+            ${a.dudaComparison.strengths.map(e=>`
+            <div style="display:flex;gap:8px;margin-bottom:6px;font-size:12px;line-height:1.5">
+              <span style="color:var(--success);flex-shrink:0;font-weight:700">✓</span>${e}
+            </div>`).join(``)}
+          </div>`:``}
+        </div>
+      </div>`:``}
+
+      <!-- Red flags -->
+      ${a.redFlags?.length?`
+      <div class="card" style="margin-bottom:14px;border-color:var(--danger-border)">
+        <div class="card-hd" style="background:var(--danger-bg)">
+          <div class="card-title" style="color:var(--danger)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke-width="2"/><line x1="12" y1="9" x2="12" y2="13" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="3"/></svg>
+            Red flags <span class="badge badge-red">${a.redFlags.length}</span>
+          </div>
+        </div>
+        <div class="card-body" style="padding-top:12px">
+          ${a.redFlags.map(e=>`
+          <div style="border:1px solid var(--danger-border);border-left:4px solid var(--danger);background:var(--danger-bg);border-radius:var(--r);padding:12px 14px;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+              ${u(e.severity)}
+              <span style="font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px">${Oe(e.type)}</span>
+            </div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">${e.title}</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:8px">${e.detail}</div>
+            <div style="background:rgba(220,38,38,.08);border-radius:var(--r);padding:9px 12px">
+              <div style="font-size:10px;font-weight:700;color:var(--danger);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">CSM Insight</div>
+              <div style="font-size:12px;color:var(--text);line-height:1.5">${e.csmInsight}</div>
+            </div>
+          </div>`).join(``)}
+        </div>
+      </div>`:`
+      <div class="alert alert-success" style="margin-bottom:14px">
+        ${z}<span><strong>No red flags detected.</strong> Platform health looks good this cycle.</span>
+      </div>`}
+
+      <!-- Growth signals -->
+      ${a.growthSignals?.length?`
+      <div class="card" style="margin-bottom:14px;border-color:var(--brand-mid)">
+        <div class="card-hd" style="background:var(--brand-light)">
+          <div class="card-title" style="color:var(--brand)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" stroke-width="2"/><polyline points="17 6 23 6 23 12" stroke-width="2"/></svg>
+            Growth signals <span class="badge badge-blue">${a.growthSignals.length}</span>
+          </div>
+        </div>
+        <div class="card-body" style="padding-top:12px">
+          ${a.growthSignals.map(e=>`
+          <div style="border:1px solid var(--brand-mid);border-left:4px solid var(--brand);background:var(--brand-light);border-radius:var(--r);padding:12px 14px;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+              ${d(e.type)}
+            </div>
+            <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px">${e.title}</div>
+            <div style="font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:8px">${e.detail}</div>
+            <div style="background:rgba(29,78,216,.08);border-radius:var(--r);padding:9px 12px">
+              <div style="font-size:10px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">CSM Action</div>
+              <div style="font-size:12px;color:var(--text);line-height:1.5">${e.csmInsight}</div>
+            </div>
+          </div>`).join(``)}
+        </div>
+      </div>`:``}
+
+      <!-- Detected changes -->
+      ${a.changes?.length?`
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">Detected changes <span class="badge badge-amber">${a.changes.length}</span></div></div>
+        <div class="card-body" style="padding-top:12px">
+          ${a.changes.map(e=>`<div class="scan-item change"><div class="scan-tag">${e.type}</div><div class="scan-name">${e.title}</div><div class="scan-detail">${e.detail}</div></div>`).join(``)}
+        </div>
+      </div>`:``}
+
+      <!-- New content -->
+      ${a.newContent?.length?`
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">New content <span class="badge badge-green">${a.newContent.length}</span></div></div>
+        <div class="card-body" style="padding-top:12px">
+          ${a.newContent.map(e=>`<div class="scan-item new-content"><div class="scan-tag">${e.type}</div><div class="scan-name">${e.title}</div><div class="scan-detail">${e.detail}</div></div>`).join(``)}
+        </div>
+      </div>`:``}
+
+      <!-- Per-page findings -->
+      ${a.pageFindings?.length?`
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd">
+          <div class="card-title">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke-width="2"/><polyline points="14 2 14 8 20 8" stroke-width="2"/></svg>
+            Per-page findings
+          </div>
+          <span class="badge badge-gray">${a.pageFindings.length} pages</span>
+        </div>
+        <div class="card-body" style="padding:0">
+          ${a.pageFindings.map((e,t)=>`
+          <div style="border-bottom:${t<a.pageFindings.length-1?`0.5px solid var(--border)`:`none`};padding:12px 14px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+              <span style="font-size:11px;font-weight:700;color:var(--text)">${e.page}</span>
+              <span class="mono" style="font-size:10px;color:var(--text3)">${e.url}</span>
+              <span class="badge ${e.language===`Outcome-focused`?`badge-green`:e.language===`Neutral`?`badge-gray`:`badge-amber`}">${e.language}</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px">
+              <div style="background:var(--surface2);border-radius:var(--r);padding:7px 9px">
+                <div style="font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">Headline</div>
+                <div style="font-size:11px;color:var(--text)">${e.headline}</div>
+              </div>
+              <div style="background:var(--surface2);border-radius:var(--r);padding:7px 9px">
+                <div style="font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">CTA type</div>
+                <div style="font-size:11px;color:var(--text)">${e.ctaType}</div>
+              </div>
+              <div style="background:var(--surface2);border-radius:var(--r);padding:7px 9px">
+                <div style="font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px">CTA copy</div>
+                <div style="font-size:11px;color:var(--text)">${e.ctaText}</div>
+              </div>
+            </div>
+            ${e.findings?.length?`
+            <div style="margin-bottom:8px">
+              ${e.findings.map(e=>`
+              <div style="display:flex;gap:7px;margin-bottom:4px;font-size:11px;line-height:1.5">
+                <span style="color:var(--warn);flex-shrink:0;font-weight:700;margin-top:1px">–</span>
+                <span style="color:var(--text2)">${e}</span>
+              </div>`).join(``)}
+            </div>`:``}
+            <div style="background:var(--brand-light);border-left:3px solid var(--brand);border-radius:0 var(--r) var(--r) 0;padding:7px 10px">
+              <span style="font-size:9px;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.5px">Suggestion  </span>
+              <span style="font-size:11px;color:var(--text);line-height:1.5">${e.suggestion}</span>
+            </div>
+          </div>`).join(``)}
+        </div>
+      </div>`:``}
+
+      <!-- Recommendations -->
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">Recommendations <span class="badge badge-blue">${a.improvements?.length||0}</span></div></div>
+        <div class="card-body" style="padding-top:12px">
+          ${(a.improvements||[]).map(e=>`
+          <div class="scan-item improvement">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+              <div class="scan-tag">${e.area}</div>
+              <span class="badge ${e.priority===`high`?`badge-red`:e.priority===`medium`?`badge-amber`:`badge-gray`}">${e.priority}</span>
+            </div>
+            <div class="scan-name">${e.title}</div>
+            <div class="scan-detail">${e.detail}</div>
+          </div>`).join(``)}
+        </div>
+      </div>
+
+      <!-- Client-facing summary -->
+      ${a.clientSummary?`
+      <div class="card">
+        <div class="card-hd"><div class="card-title">Client-facing summary</div><span class="chip">Shareable</span></div>
+        <div class="card-body">
+          <div class="summary-card">
+            <h3>${a.clientSummary.headline||r?.name+` Site Review`}</h3>
+            <p>Reviewed ${w(t.created_at)} · Duda Site Scanner</p>
+            <div class="summary-meta">
+              <div class="summary-meta-item"><span class="summary-meta-val">${o}/10</span>Score</div>
+              <div class="summary-meta-item"><span class="summary-meta-val">${a.redFlags?.length||0}</span>Red flags</div>
+              <div class="summary-meta-item"><span class="summary-meta-val">${a.growthSignals?.length||0}</span>Growth signals</div>
+            </div>
+          </div>
+          ${a.clientSummary.highlights?.length?`
+          <div style="margin-bottom:14px">
+            <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">What's working well</div>
+            ${a.clientSummary.highlights.map(e=>`<div style="display:flex;gap:8px;margin-bottom:6px;font-size:12px"><span style="color:var(--success);font-weight:700">✓</span>${e}</div>`).join(``)}
+          </div>`:``}
+          ${a.clientSummary.opportunities?.length?`
+          <div>
+            <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Quick wins</div>
+            ${a.clientSummary.opportunities.map(e=>`<div style="display:flex;gap:8px;margin-bottom:6px;font-size:12px"><span style="color:var(--brand);font-weight:700">→</span>${e}</div>`).join(``)}
+          </div>`:``}
+        </div>
+      </div>`:``}
+    </div>
+
+    <!-- Right column -->
+    <div>
+
+      <!-- Score breakdown -->
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">Score breakdown</div></div>
+        <div class="card-body">
+          ${Object.entries(a.scoreBreakdown||{}).map(([e,t])=>`
+          <div class="score-row">
+            <div class="score-label-row">
+              <span style="font-size:11px;font-weight:600">${{services:`Services`,pricing:`Pricing clarity`,portfolio:`Portfolio`,homepage:`Homepage`,cta:`CTAs`,trust:`Trust signals`,ux:`UX`,content:`Content`,seo:`SEO`,cro:`Conversion`,mobile:`Mobile`,performance:`Performance`,discoverability:`Discoverability`,pricing_clarity:`Pricing clarity`,cta_strength:`CTA strength`,offering_depth:`Offering depth`,duda_alignment:`Duda alignment`}[e]||e}</span>
+              <span style="font-size:11px;font-weight:600">${t}/10</span>
+            </div>
+            <div class="score-bar"><div class="score-fill" style="width:${t*10}%;background:${D(t)}"></div></div>
+          </div>`).join(``)}
+        </div>
+      </div>
+
+      <!-- Duda adoption -->
+      ${a.dudaAdoption?`
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd">
+          <div class="card-title">Duda adoption</div>
+          <span style="font-size:18px;font-weight:600;color:${(e=>e>=8?`var(--success)`:e>=5?`var(--warn)`:`var(--danger)`)(a.dudaAdoption.score)}">${a.dudaAdoption.score}/10</span>
+        </div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+            <div style="background:var(--surface2);border-radius:var(--r);padding:9px 11px;text-align:center">
+              <div style="font-size:18px;margin-bottom:2px">${a.dudaAdoption.flexUsed?`✓`:`✗`}</div>
+              <div style="font-size:10px;font-weight:600;color:${a.dudaAdoption.flexUsed?`var(--success)`:`var(--danger)`}">Flex layout</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--r);padding:9px 11px;text-align:center">
+              <div style="font-size:18px;margin-bottom:2px">${a.dudaAdoption.whitelabelIntact?`✓`:`✗`}</div>
+              <div style="font-size:10px;font-weight:600;color:${a.dudaAdoption.whitelabelIntact?`var(--success)`:`var(--danger)`}">White-label intact</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--r);padding:9px 11px;text-align:center">
+              <div style="font-size:18px;margin-bottom:2px">${a.dudaAdoption.legacyWidgets?`✗`:`✓`}</div>
+              <div style="font-size:10px;font-weight:600;color:${a.dudaAdoption.legacyWidgets?`var(--warn)`:`var(--success)`}">No legacy widgets</div>
+            </div>
+            <div style="background:var(--surface2);border-radius:var(--r);padding:9px 11px;text-align:center">
+              <div style="font-size:16px;font-weight:600;margin-bottom:2px">${a.dudaAdoption.widgetsDetected?.length||0}</div>
+              <div style="font-size:10px;font-weight:600;color:var(--text2)">Widgets active</div>
+            </div>
+          </div>
+          ${a.dudaAdoption.widgetsDetected?.length?`
+          <div style="margin-bottom:10px">
+            <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Detected widgets</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px">
+              ${a.dudaAdoption.widgetsDetected.map(e=>`<span class="chip">${e}</span>`).join(``)}
+            </div>
+          </div>`:``}
+          <div style="background:var(--surface2);border-radius:var(--r);padding:10px 12px;font-size:11px;color:var(--text2);line-height:1.5">${a.dudaAdoption.insight}</div>
+        </div>
+      </div>`:``}
+
+      <!-- AM talking points -->
+      ${a.talkingPoints?.length?`
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-hd"><div class="card-title">AM talking points</div></div>
+        <div class="card-body">
+          <ul style="padding-left:16px;font-size:12px;line-height:1.7">
+            ${a.talkingPoints.map(e=>`<li style="margin-bottom:8px">${e}</li>`).join(``)}
+          </ul>
+        </div>
+      </div>`:``}
+
+      <!-- Email notification -->
+      <div class="card">
+        <div class="card-hd">
+          <div class="card-title">Email notification</div>
+          ${i?`<span class="badge badge-green"><span class="dot"></span>Sent</span>`:`<span class="badge badge-gray">No AM assigned</span>`}
+        </div>
+        <div class="email-mock">
+          <div class="email-hd">
+            <div class="email-from">from: scanner@duda.co → ${i?.email||`(unassigned)`}</div>
+            <div class="email-subj">Site report: ${r?.name} — ${w(t.created_at)}</div>
+          </div>
+          <div class="email-body">
+            <p>Hi ${(i?.name||n.member?.name||``).split(` `)[0]||`there`},</p>
+            <p style="margin:10px 0">${a.emailDigest||`Your client site scan is complete.`}</p>
+            ${a.redFlags?.length?`
+            <div class="email-section">
+              <h4>⚠ Red flags (${a.redFlags.length})</h4>
+              <ul>${a.redFlags.slice(0,3).map(e=>`<li><strong>${e.title}</strong></li>`).join(``)}</ul>
+            </div>`:``}
+            ${a.growthSignals?.length?`
+            <div class="email-section">
+              <h4>Growth signals (${a.growthSignals.length})</h4>
+              <ul>${a.growthSignals.slice(0,2).map(e=>`<li>${e.title}</li>`).join(``)}</ul>
+            </div>`:``}
+            <p style="margin-top:14px;font-size:11px;color:#9CA3AF">Duda Site Scanner · Next scan: ${ce(t.created_at)}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>`}function Me(){if(!r())return`
+    <div class="alert alert-info">${L}
+      <span>Team management is restricted to Admins. Contact an Admin to make changes.</span>
+    </div>`;let e=n.members.filter(e=>e.status===`active`),t=n.members.filter(e=>e.status===`suspended`),i=e.filter(e=>e.role===`admin`);return`
+  <div class="stat-grid stat-grid-3" style="margin-bottom:18px">
+    <div class="stat-card"><div class="stat-lbl">Active members</div><div class="stat-val">${e.length}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Admins</div><div class="stat-val">${i.length}</div></div>
+    <div class="stat-card"><div class="stat-lbl">Suspended</div>
+      <div class="stat-val" style="color:${t.length>0?`var(--warn)`:`inherit`}">${t.length}</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" style="margin-bottom:18px">
+    ${L}
+    <span>Only <strong>@${S}</strong> email addresses are permitted. Enforced at database level — no external addresses can be invited.</span>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-hd">
+      <div class="card-title">${P} Active members</div>
+      <span class="badge badge-green"><span class="dot"></span>${e.length} active</span>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Member</th><th>Email</th><th>Role</th><th>Clients</th><th>Joined</th><th>Actions</th></tr></thead>
+      <tbody>
+        ${e.map(e=>{let t=e.id===n.member.id,r=n.clients.filter(t=>t.am_id===e.id).length;return`<tr>
+            <td>
+              <div style="display:flex;align-items:center;gap:9px">
+                <div class="av av-28 ${E(e.role)}">${C(e.name)}</div>
+                <div style="font-weight:600;font-size:12px">
+                  ${e.name}${t?` <span class="badge badge-gray" style="font-size:9px">you</span>`:``}
+                </div>
+              </div>
+            </td>
+            <td class="mono" style="color:var(--text2)">${e.email}</td>
+            <td><span class="badge ${e.role===`admin`?`badge-blue`:`badge-green`}">${e.role}</span></td>
+            <td style="color:var(--text2)">${r} site${r===1?``:`s`}</td>
+            <td style="font-size:11px;color:var(--text3)">${w(e.created_at)}</td>
+            <td>
+              <div style="display:flex;gap:4px;flex-wrap:wrap">
+                <button class="btn btn-ghost btn-xs" data-action="openEditMemberModal" data-id="${e.id}">Edit</button>
+                ${!t&&e.role===`staff`?`<button class="btn btn-ghost btn-xs" data-action="changeRole" data-id="${e.id}" data-role="admin">Make admin</button>`:``}
+                ${!t&&e.role===`admin`&&i.length>1?`<button class="btn btn-ghost btn-xs" data-action="changeRole" data-id="${e.id}" data-role="staff">Demote</button>`:``}
+                ${t?``:`<button class="btn btn-ghost btn-xs" data-action="suspendMember" data-id="${e.id}">Suspend</button>`}
+                ${t?`<span class="chip">you</span>`:`<button class="btn btn-danger btn-xs" data-action="removeMember" data-id="${e.id}">Delete</button>`}
+              </div>
+            </td>
+          </tr>`}).join(``)}
+      </tbody>
+    </table></div>
+  </div>
+
+  ${t.length?`
+  <div class="card">
+    <div class="card-hd">
+      <div class="card-title">Suspended</div>
+      <span class="badge badge-red">${t.length}</span>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Member</th><th>Email</th><th>Suspended</th><th>Actions</th></tr></thead>
+      <tbody>
+        ${t.map(e=>`<tr>
+          <td style="opacity:.6">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div class="av av-28 av-amber">${C(e.name)}</div>
+              <div style="font-weight:600;font-size:12px">${e.name}</div>
+            </div>
+          </td>
+          <td class="mono" style="color:var(--text2)">${e.email}</td>
+          <td style="font-size:11px;color:var(--text3)">${w(e.updated_at||e.created_at)}</td>
+          <td>
+            <div style="display:flex;gap:5px">
+              <button class="btn btn-success btn-xs" data-action="reactivateMember" data-id="${e.id}">Reactivate</button>
+              <button class="btn btn-danger btn-xs" data-action="removeMember" data-id="${e.id}">Remove</button>
+            </div>
+          </td>
+        </tr>`).join(``)}
+      </tbody>
+    </table></div>
+  </div>`:``}`}var J=`staff`;function Ne(){J=`staff`,j(`<div class="modal">
+    <div class="modal-hd">
+      <div class="modal-title">Invite team member</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info" style="margin-bottom:16px">
+        ${L}
+        <span>Only <strong>@${S}</strong> addresses accepted. Type the handle — domain is locked.</span>
+      </div>
+      <div class="fg">
+        <label class="flabel">Full name *</label>
+        <input class="finput" id="inv-name" placeholder="Sarah Chen">
+      </div>
+      <div class="fg">
+        <label class="flabel">Work email *</label>
+        <div class="domain-input-wrap">
+          <input class="finput" id="inv-handle" placeholder="sarah.chen"
+            oninput="document.getElementById('inv-preview').textContent = (this.value || 'handle') + '@${S}'">
+          <div class="domain-suffix">${L} @${S}</div>
+        </div>
+        <div class="ferr" id="inv-err"></div>
+        <div class="fhint">Preview: <strong id="inv-preview" style="font-family:var(--mono)">handle@${S}</strong></div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Initial password *</label>
+        <div class="pw-wrap">
+          <input class="finput" id="inv-pw" type="password" placeholder="Min 8 characters"
+            oninput="window._pwStrength('inv-pw','inv-pw-bar')">
+          <button class="pw-toggle" type="button" onclick="window._togglePw('inv-pw')">${B}</button>
+        </div>
+        <div class="pw-strength" id="inv-pw-bar"></div>
+      </div>
+      <div class="fg" style="margin-bottom:0">
+        <label class="flabel">Role</label>
+        <div class="role-grid">
+          <div class="role-opt sel" id="inv-ropt-staff" data-action="setInvRole" data-role="staff">
+            <div class="role-opt-name">Staff</div>
+            <div class="role-opt-desc">Run scans, view all clients, edit own</div>
+          </div>
+          <div class="role-opt" id="inv-ropt-admin" data-action="setInvRole" data-role="admin">
+            <div class="role-opt-name">Admin</div>
+            <div class="role-opt-desc">Full control — team, clients, settings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="inv-save-btn">Create account</button>
+    </div>
+  </div>`),document.getElementById(`inv-save-btn`).addEventListener(`click`,async()=>{let e=document.getElementById(`inv-name`).value.trim(),t=(document.getElementById(`inv-handle`).value||``).trim().toLowerCase().replace(/[@\s]/g,``),n=document.getElementById(`inv-pw`).value||``,r=t?`${t}@${S}`:``,i=document.getElementById(`inv-err`);if(!e){k(`Name is required`,`danger`);return}let a=le(r);if(a){i.textContent=a,i.classList.add(`show`);return}if(n.length<8){k(`Password must be at least 8 characters`,`danger`);return}i.classList.remove(`show`);let o=document.getElementById(`inv-save-btn`);o.disabled=!0,o.textContent=`Creating…`;let{error:s}=await ae({name:e,email:r,role:J,password:n});if(s){o.disabled=!1,o.textContent=`Create account`,i.textContent=s.message||`Failed to create account`,i.classList.add(`show`);return}A(),window._reloadAndRender(`team`),k(`${e} added as ${J}`,`success`)})}function Pe(e){J=e,document.getElementById(`inv-ropt-staff`)?.classList.toggle(`sel`,e===`staff`),document.getElementById(`inv-ropt-admin`)?.classList.toggle(`sel`,e===`admin`)}var Y=`staff`;function Fe(e){let t=n.members.find(t=>t.id===e);if(!t)return;Y=t.role;let r=t.id===n.member.id;j(`<div class="modal">
+    <div class="modal-hd">
+      <div class="modal-title">Edit member${r?` (you)`:``}</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface2);border-radius:var(--r);margin-bottom:16px">
+        <div class="av av-28 ${E(t.role)}">${C(t.name)}</div>
+        <div>
+          <div style="font-weight:600;font-size:13px">${t.name}</div>
+          <div style="font-size:11px;color:var(--text2)">${t.email}</div>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Full name</label>
+        <input class="finput" id="em-name" value="${t.name}">
+      </div>
+      ${r?`
+      <div class="alert alert-info" style="margin-bottom:14px">
+        ${R}<span>You're editing your own account. To change your password use the profile menu (bottom-left).</span>
+      </div>`:`
+      <div class="fg">
+        <label class="flabel">Role</label>
+        <div class="role-grid">
+          <div class="role-opt ${t.role===`staff`?`sel`:``}" id="em-ropt-staff" data-action="setEditRole" data-role="staff">
+            <div class="role-opt-name">Staff</div>
+            <div class="role-opt-desc">Scanner access, edit own clients</div>
+          </div>
+          <div class="role-opt ${t.role===`admin`?`sel`:``}" id="em-ropt-admin" data-action="setEditRole" data-role="admin">
+            <div class="role-opt-name">Admin</div>
+            <div class="role-opt-desc">Full team and client control</div>
+          </div>
+        </div>
+      </div>`}
+      <div class="fg" style="margin-bottom:0">
+        <label class="flabel">Reset password <span style="font-weight:400;color:var(--text3)">(leave blank to keep current)</span></label>
+        <div class="pw-wrap">
+          <input class="finput" id="em-pw" type="password" placeholder="New password — min 8 characters"
+            oninput="window._pwStrength('em-pw','em-pw-bar')">
+          <button class="pw-toggle" type="button" onclick="window._togglePw('em-pw')">${B}</button>
+        </div>
+        <div class="pw-strength" id="em-pw-bar"></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="em-save-btn">Save changes</button>
+    </div>
+  </div>`),document.getElementById(`em-save-btn`).addEventListener(`click`,async()=>{let i=document.getElementById(`em-name`).value.trim()||t.name;document.getElementById(`em-pw`)?.value;let{error:a}=await _(e,{name:i,role:r?t.role:Y});if(a){k(a.message,`danger`);return}r&&(n.member={...n.member,name:i}),A(),window._reloadAndRender(`team`),k(`Member updated`)})}function Ie(e){Y=e,document.getElementById(`em-ropt-staff`)?.classList.toggle(`sel`,e===`staff`),document.getElementById(`em-ropt-admin`)?.classList.toggle(`sel`,e===`admin`)}async function Le(e,t){let r=n.members.find(t=>t.id===e);confirm(`Change ${r?.name}'s role to ${t}?`)&&(await _(e,{role:t}),window._reloadAndRender(`team`),k(`${r?.name} is now ${t}`))}async function Re(e){let t=n.members.find(t=>t.id===e);confirm(`Suspend ${t?.name}? They will lose access immediately.`)&&(await v(e),window._reloadAndRender(`team`),k(`${t?.name} suspended`))}async function ze(e){await y(e),window._reloadAndRender(`team`),k(`${n.members.find(t=>t.id===e)?.name} reactivated`)}async function Be(e){let t=n.members.find(t=>t.id===e);confirm(`Permanently remove ${t?.name}? This cannot be undone.`)&&(await b(e),window._reloadAndRender(`team`),k(`Member removed`))}function Ve(){j(`<div class="modal">
+    <div class="modal-hd">
+      <div class="modal-title">Role permissions guide</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <table style="width:100%;font-size:12px;border-collapse:collapse">
+        <thead>
+          <tr>
+            <th style="text-align:left;padding:8px 12px;background:var(--surface2);border-bottom:1px solid var(--border)">Permission</th>
+            <th style="text-align:center;padding:8px 12px;background:var(--surface2);border-bottom:1px solid var(--border)">Staff</th>
+            <th style="text-align:center;padding:8px 12px;background:var(--surface2);border-bottom:1px solid var(--border)">Admin</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${[[`Run site scans`,`✓`,`✓`],[`View all clients`,`✓`,`✓`],[`Edit own assigned clients`,`✓`,`✓`],[`Edit any client`,`—`,`✓`],[`Invite team members`,`—`,`✓`],[`Suspend / remove members`,`—`,`✓`],[`Change member roles`,`—`,`✓`],[`Access settings`,`—`,`✓`],[`Export all data`,`—`,`✓`]].map(([e,t,n])=>`<tr>
+            <td style="padding:8px 12px;border-bottom:1px solid var(--border)">${e}</td>
+            <td style="text-align:center;padding:8px 12px;border-bottom:1px solid var(--border);color:${t===`✓`?`var(--success)`:`var(--text3)`}">${t}</td>
+            <td style="text-align:center;padding:8px 12px;border-bottom:1px solid var(--border);color:${n===`✓`?`var(--success)`:`var(--text3)`}">${n}</td>
+          </tr>`).join(``)}
+        </tbody>
+      </table>
+      <div class="alert alert-info" style="margin-top:14px">
+        ${L}
+        <span>All accounts must use <strong>@${S}</strong>. No external domains are permitted — enforced at the database level.</span>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Close</button>
+    </div>
+  </div>`)}function He(){return r()?`
+  <div style="max-width:580px">
+
+    ${`
+    <div class="alert alert-warn" style="margin-bottom:20px">
+      ${R}
+      <div>
+        <strong>Demo mode — Supabase not connected</strong><br>
+        <span style="font-size:11px;margin-top:2px;display:block">
+          To connect a real database, add your Supabase keys to <code>.env</code> and restart the dev server.
+          See <code>SETUP.md</code> for step-by-step instructions.
+        </span>
+      </div>
+    </div>`}
+
+    <!-- Scan schedule -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-hd"><div class="card-title">Scan schedule</div></div>
+      <div class="card-body">
+        <p style="font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:12px">
+          Sites are automatically queued for scanning when <code>last_scan</code> is older than 21 days.
+          The scheduler runs daily at 07:00 UTC via <code>pg_cron</code>.
+        </p>
+        <div class="alert alert-success">
+          ${z}
+          <span>pg_cron job <strong>queue-due-scans</strong> configured — queues overdue sites every morning at 07:00 UTC. Worker runs every 30 minutes.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email notifications -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-hd">
+        <div class="card-title">Email notifications</div>
+        <span class="badge badge-gray">Not configured</span>
+      </div>
+      <div class="card-body">
+        ${`
+        <p style="font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:12px">
+          Email notifications are currently <strong>disabled</strong>. Scans still run and results are fully visible in the app.
+          To enable, connect SendGrid and flip the flag in <code>.env</code>.
+        </p>
+        <div class="alert alert-warn">
+          ${R}
+          <div>
+            <strong>To enable emails:</strong>
+            <ol style="padding-left:16px;margin-top:6px;font-size:11px;line-height:2">
+              <li>Sign up at <strong>sendgrid.com</strong> and verify <code>duda.co</code> as a sender domain</li>
+              <li>Run: <code>supabase secrets set SENDGRID_KEY=SG.your_key</code></li>
+              <li>Set <code>VITE_EMAIL_ENABLED=true</code> in your <code>.env</code> file</li>
+              <li>Restart the dev server — emails will send on the next scan</li>
+            </ol>
+          </div>
+        </div>`}
+      </div>
+    </div>
+
+    <!-- Anthropic API -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-hd">
+        <div class="card-title">AI scan engine</div>
+        <span class="badge badge-amber">Demo mode</span>
+      </div>
+      <div class="card-body">
+        ${`
+        <p style="font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:12px">
+          Running with demo scan results. To connect the real Anthropic API:
+        </p>
+        <div class="alert alert-warn">
+          ${R}
+          <div>
+            <strong>To enable real AI scans:</strong>
+            <ol style="padding-left:16px;margin-top:6px;font-size:11px;line-height:2">
+              <li>Connect Supabase (add keys to <code>.env</code>)</li>
+              <li>Run: <code>supabase secrets set ANTHROPIC_KEY=sk-ant-...</code></li>
+              <li>Deploy Edge Functions: <code>supabase functions deploy run-scan</code></li>
+            </ol>
+          </div>
+        </div>`}
+      </div>
+    </div>
+
+    <!-- Data management -->
+    <div class="card">
+      <div class="card-hd"><div class="card-title">Data management</div></div>
+      <div class="card-body">
+        <div style="font-size:12px;color:var(--text2);margin-bottom:14px">
+          ${n.scans.length} scans · ${n.clients.length} clients · ${n.members.length} members
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-secondary btn-sm" data-action="exportData">Export all data (JSON)</button>
+          <button class="btn btn-danger btn-sm" data-action="clearScans">Clear scan history</button>
+        </div>
+      </div>
+    </div>
+
+  </div>`:`
+    <div class="alert alert-info">${L}
+      <span>Settings are restricted to Admins.</span>
+    </div>`}async function Ue(){confirm(`Clear all scan history? This cannot be undone.`)&&(await ie(),window._reloadAndRender(`settings`),k(`Scan history cleared`))}function We(){let e=new Blob([JSON.stringify({members:n.members,clients:n.clients,scans:n.scans},null,2)],{type:`application/json`}),t=document.createElement(`a`);t.href=URL.createObjectURL(e),t.download=`duda-scanner-export-${new Date().toISOString().slice(0,10)}.json`,t.click(),k(`Export downloaded`)}function Ge(){return`
+  <div style="max-width:860px">
+
+    <!-- Hero -->
+    <div style="background:var(--sidebar);border-radius:var(--rl);padding:32px 36px;margin-bottom:24px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(29,78,216,.15)"></div>
+      <div style="position:absolute;bottom:-60px;right:60px;width:140px;height:140px;border-radius:50%;background:rgba(29,78,216,.08)"></div>
+      <div style="position:relative">
+        <div style="font-size:10px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Duda · Internal Tool</div>
+        <h1 style="font-size:26px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.2">Duda Site Scanner</h1>
+        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;max-width:540px;margin-bottom:20px">
+          An AI-powered intelligence tool for the Duda AM team. Automatically monitors client websites, detects changes to their offering, and generates strategic insights so every client call is informed, not reactive.
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:7px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:6px">
+            <span style="width:6px;height:6px;border-radius:50%;background:#4ADE80;display:inline-block"></span>
+            Demo mode — UI preview
+          </div>
+          <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:7px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.7)">
+            Scans every 21 days
+          </div>
+          <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:7px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.7)">
+            @duda.co only
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What it does -->
+    <div style="margin-bottom:24px">
+      <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px">What this tool does</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+
+        <div class="card" style="padding:18px 20px">
+          <div style="width:34px;height:34px;background:var(--brand-light);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--brand)">${F}</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">Automated site scanning</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">Visits each client site on a 21-day cycle using AI + live web search. No manual work — scans run in the background and results land in the dashboard.</div>
+        </div>
+
+        <div class="card" style="padding:18px 20px">
+          <div style="width:34px;height:34px;background:var(--warn-bg);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--warn)">${N}</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">Offering change detection</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">Detects changes to services pages, pricing, portfolio, and homepage CTAs since the last scan. You'll know when a client launches something new before they even tell you.</div>
+        </div>
+
+        <div class="card" style="padding:18px 20px">
+          <div style="width:34px;height:34px;background:var(--success-bg);border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--success)">${z}</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">AM talking points</div>
+          <div style="font-size:12px;color:var(--text2);line-height:1.6">Every scan generates 3 strategic talking points tailored for your next call — framed as Duda-specific opportunities, not generic feedback.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scan report breakdown -->
+    <div class="card" style="margin-bottom:24px">
+      <div class="card-hd"><div class="card-title">${N} What's inside every scan report</div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+
+          ${[[`Executive summary`,`A 2–3 sentence assessment of the website as a business tool — how well it converts interest in their offering into enquiries.`,`brand`],[`Detected changes`,`Anything that changed on offering pages since the last scan — new services, updated pricing, portfolio additions, homepage edits.`,`warn`],[`New content found`,`New service pages, pricing tiers, portfolio pieces, or CTAs added to the site. Surfaced so you can react before the next scheduled call.`,`success`],[`Improvement recommendations`,`Specific, Duda-actionable advice tied to business impact. Focused only on services, pricing, portfolio, homepage, and trust signals — nothing generic.`,`brand`],[`Score breakdown`,`Six dimensions scored: Services, Pricing, Portfolio, Homepage, CTAs, and Trust Signals. Gives a quick read on where the offering is strong vs. where to focus.`,`info`],[`AM talking points`,`Three ready-to-use insights framed as strategic observations — things you can say in a call that position you as a partner, not just a vendor checking in.`,`success`],[`Client-facing summary`,`A shareable one-pager you can send directly to the client. Shows headline score, what's working, and two quick wins — no technical language.`,`warn`],[`Email notification`,`When email is configured, the assigned AM gets a digest automatically after each scan. Includes top changes and recommendations.`,`brand`]].map(([e,t,n])=>`
+          <div style="padding:14px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+              <span style="width:7px;height:7px;border-radius:50%;background:var(--${n===`brand`?`brand`:n===`warn`?`warn`:n===`success`?`success`:`info`});flex-shrink:0"></span>
+              <div style="font-size:12px;font-weight:600">${e}</div>
+            </div>
+            <div style="font-size:11px;color:var(--text2);line-height:1.6;padding-left:15px">${t}</div>
+          </div>`).join(``)}
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Two column: Team + Access -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+
+      <div class="card">
+        <div class="card-hd"><div class="card-title">${P} Team & access control</div></div>
+        <div class="card-body">
+          <div style="margin-bottom:16px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span class="badge badge-blue">Admin</span>
+              <span style="font-size:12px;font-weight:600">Full control</span>
+            </div>
+            <ul style="padding-left:16px;font-size:12px;color:var(--text2);line-height:2">
+              <li>Invite and remove team members</li>
+              <li>Change roles and reset passwords</li>
+              <li>View and manage all clients</li>
+              <li>Access settings and export data</li>
+            </ul>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:14px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+              <span class="badge badge-green">Staff</span>
+              <span style="font-size:12px;font-weight:600">AM access</span>
+            </div>
+            <ul style="padding-left:16px;font-size:12px;color:var(--text2);line-height:2">
+              <li>Run scans on any client</li>
+              <li>View all client sites and scan history</li>
+              <li>Edit and manage own assigned clients</li>
+              <li>Add new clients (assigned to self)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-hd"><div class="card-title">${L} Security & access rules</div></div>
+        <div class="card-body">
+          <div style="font-size:12px;color:var(--text2);line-height:1.8;margin-bottom:14px">
+            Access is restricted at every layer — not just the UI.
+          </div>
+          ${[[`@duda.co only`,`Sign-up and invitation both enforce the Duda email domain. External addresses are rejected at the database level — not just the frontend.`],[`Row-level security`,`Supabase RLS policies ensure Staff can only edit their own clients even if they call the API directly.`],[`Admin-only endpoints`,`Inviting members and changing roles routes through a protected Edge Function that verifies admin role server-side.`],[`Session persistence`,`Sessions are managed by Supabase Auth. Suspended accounts are blocked at login, not just the UI.`]].map(([e,t])=>`
+          <div style="display:flex;gap:10px;margin-bottom:12px;font-size:12px">
+            <span style="color:var(--success);flex-shrink:0;margin-top:2px">${z}</span>
+            <div><strong>${e}</strong><br><span style="color:var(--text2)">${t}</span></div>
+          </div>`).join(``)}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- How the scan cycle works -->
+    <div class="card" style="margin-bottom:24px">
+      <div class="card-hd"><div class="card-title">${M} How the 21-day scan cycle works</div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative">
+          <!-- connector line -->
+          <div style="position:absolute;top:22px;left:10%;right:10%;height:1px;background:var(--border);z-index:0"></div>
+          ${[[`1`,`Site added`,`AM adds client URL and assigns themselves as the owner`],[`2`,`Scheduler queues`,`pg_cron runs daily at 07:00 UTC and queues any site not scanned in 21 days`],[`3`,`AI scans live`,`Edge Function calls Claude with web search — visits the actual site`],[`4`,`Report saved`,`Results saved to Supabase. Score, changes, improvements all stored`],[`5`,`AM notified`,`Email sent to assigned AM with digest + link to full report in the dashboard`]].map(([e,t,n])=>`
+          <div style="text-align:center;padding:0 8px;position:relative;z-index:1">
+            <div style="width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 10px">${e}</div>
+            <div style="font-size:11px;font-weight:600;margin-bottom:4px">${t}</div>
+            <div style="font-size:10px;color:var(--text2);line-height:1.5">${n}</div>
+          </div>`).join(``)}
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech stack -->
+    <div class="card" style="margin-bottom:24px">
+      <div class="card-hd"><div class="card-title">${me} Technical stack</div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+          ${[[`Frontend`,`Vite + vanilla JS`,`Single-file app. Runs in any browser. No framework dependency.`],[`Auth + DB`,`Supabase`,`Postgres with Row Level Security. Auth enforces @duda.co domain at the database trigger level.`],[`AI engine`,`Anthropic Claude`,`claude-sonnet-4-20250514 with web_search tool. Visits the live site before generating the report.`],[`Scheduler`,`pg_cron`,`Built into Supabase. Queues overdue sites daily. Worker processes up to 5 scans per 30-minute cycle.`],[`Email`,`SendGrid`,`Transactional email to the assigned AM after each scan. Optional — app works fully without it.`],[`Deploy`,`Vercel + GitHub Actions`,`Frontend on Vercel CDN. Edge Functions auto-deploy on push to main via GitHub Actions.`]].map(([e,t,n])=>`
+          <div style="background:var(--surface2);border-radius:var(--r);padding:13px 14px">
+            <div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px">${e}</div>
+            <div style="font-size:12px;font-weight:600;margin-bottom:4px">${t}</div>
+            <div style="font-size:11px;color:var(--text2);line-height:1.5">${n}</div>
+          </div>`).join(``)}
+        </div>
+      </div>
+    </div>
+
+    <!-- Getting started -->
+    <div class="card">
+      <div class="card-hd"><div class="card-title">${z} Getting started</div></div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <div style="font-size:12px;font-weight:600;margin-bottom:10px">Right now (demo mode)</div>
+            ${[`Log in with any @duda.co email + password <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">demo</code>`,`Add a client site under Clients & Sites`,`Run a scan — you'll get a full demo report instantly`,`Invite team members from the Team page`].map(e=>`<div style="display:flex;gap:8px;margin-bottom:8px;font-size:12px"><span style="color:var(--success);flex-shrink:0">${z}</span><span>${e}</span></div>`).join(``)}
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:600;margin-bottom:10px">To go live (real data)</div>
+            ${[`Create a Supabase project and run the SQL migration`,`Add <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">VITE_SUPABASE_URL</code> and <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">VITE_SUPABASE_ANON_KEY</code> to <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">.env</code>`,`Set <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">ANTHROPIC_KEY</code> in Supabase secrets and deploy Edge Functions`,`Deploy frontend to Vercel — done`].map(e=>`<div style="display:flex;gap:8px;margin-bottom:8px;font-size:12px"><span style="color:var(--brand);flex-shrink:0">${z}</span><span>${e}</span></div>`).join(``)}
+          </div>
+        </div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+          <div class="alert alert-info" style="margin:0">
+            ${R}
+            <span>Full setup instructions are in <code>SETUP.md</code> included with the project download. The entire process takes about 45 minutes.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:24px 0 8px;font-size:11px;color:var(--text3)">
+      Built for the Duda AM team · Version 1.0
+    </div>
+
+  </div>`}var Ke=`modulepreload`,qe=function(e){return`/`+e},Je={},Ye=function(e,t,n){let r=Promise.resolve();if(t&&t.length>0){let e=document.getElementsByTagName(`link`),i=document.querySelector(`meta[property=csp-nonce]`),a=i?.nonce||i?.getAttribute(`nonce`);function o(e){return Promise.all(e.map(e=>Promise.resolve(e).then(e=>({status:`fulfilled`,value:e}),e=>({status:`rejected`,reason:e}))))}r=o(t.map(t=>{if(t=qe(t,n),t in Je)return;Je[t]=!0;let r=t.endsWith(`.css`),i=r?`[rel="stylesheet"]`:``;if(n)for(let n=e.length-1;n>=0;n--){let i=e[n];if(i.href===t&&(!r||i.rel===`stylesheet`))return}else if(document.querySelector(`link[href="${t}"]${i}`))return;let o=document.createElement(`link`);if(o.rel=r?`stylesheet`:Ke,r||(o.as=`script`),o.crossOrigin=``,o.href=t,a&&o.setAttribute(`nonce`,a),document.head.appendChild(o),r)return new Promise((e,n)=>{o.addEventListener(`load`,e),o.addEventListener(`error`,()=>n(Error(`Unable to preload CSS for ${t}`)))})}))}function i(e){let t=new Event(`vite:preloadError`,{cancelable:!0});if(t.payload=e,window.dispatchEvent(t),!t.defaultPrevented)throw e}return r.then(t=>{for(let e of t||[])e.status===`rejected`&&i(e.reason);return e().catch(i)})},Xe={dashboard:{title:`Dashboard`,sub:`Your site monitoring overview`},clients:{title:`Clients & Sites`,sub:`All monitored websites`},scans:{title:`Scan History`,sub:`AI-generated site reports`},team:{title:`Team Management`,sub:`Members, roles & invitations — @${S} only`},settings:{title:`Settings`,sub:`Scanner configuration and preferences`},about:{title:`About`,sub:`Tool capabilities and setup guide`}};window._closeModal=A,window._pwStrength=de,window._togglePw=fe,window._reloadAndRender=Z,(async()=>{let e=await ee();if(!e){X();return}let t=await f(e.user.id);if(!t||t.status===`suspended`){X();return}n.session=e,n.member=t,await Z(`dashboard`)})();function X(){document.getElementById(`app`).innerHTML=ge(),_e(async()=>{await Z(`dashboard`),k(`Welcome back, ${n.member.name.split(` `)[0]}!`,`success`)})}async function Z(e){n.page=e||n.page;let{members:t,clients:r,scans:i}=await p();n.members=t,n.clients=r,n.scans=i,Q(),$()}function Q(){let e=n.clients.filter(e=>{let t=e.last_scan;return!t||Date.now()>new Date(t).getTime()+21*864e5}),t=[{id:`dashboard`,label:`Dashboard`,icon:pe},{id:`clients`,label:`Clients & Sites`,icon:M,badge:e.length},{id:`scans`,label:`Scan History`,icon:N}];r()&&(t.push({id:`team`,label:`Team`,icon:P}),t.push({id:`settings`,label:`Settings`,icon:me}));let i=[{id:`about`,label:`About this tool`,icon:he}];document.getElementById(`app`).innerHTML=`
+  <div class="demo-banner">
+    🔬 Demo mode — using mock data. Add Supabase keys to <code>.env</code> to go live.
+    See <a href="#" onclick="window._nav('settings');return false">Settings</a> for details.
+  </div>
+  <div class="app">
+    <div class="sidebar">
+      <div class="sb-logo">
+        <div class="sb-eyebrow">Duda</div>
+        <div class="sb-title">Site Scanner <span class="sb-pill">AM</span></div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Navigation</div>
+        ${t.map(e=>`
+        <div class="nav-item ${n.page===e.id?`active`:``}" data-nav="${e.id}">
+          ${e.icon} ${e.label}
+          ${e.badge?`<span class="nav-badge">${e.badge}</span>`:``}
+        </div>`).join(``)}
+        <div style="height:1px;background:rgba(255,255,255,.07);margin:10px 2px"></div>
+        ${i.map(e=>`
+        <div class="nav-item ${n.page===e.id?`active`:``}" data-nav="${e.id}" style="color:rgba(255,255,255,.3)">
+          ${e.icon} ${e.label}
+        </div>`).join(``)}
+      </nav>
+      <div class="sb-foot">
+        <div class="sb-user" data-action="openProfileModal">
+          <div class="av av-32 ${E(n.member?.role)}">${C(n.member?.name||`?`)}</div>
+          <div>
+            <div class="sb-uname">${n.member?.name||`…`}</div>
+            <div class="sb-urole">${n.member?.role===`admin`?`Admin`:`Staff`} · Duda</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <div class="tb-title" id="tb-title"></div>
+          <div class="tb-sub"   id="tb-sub"></div>
+        </div>
+        <div class="tb-actions" id="tb-actions"></div>
+      </div>
+      <div class="content fadein" id="content"></div>
+    </div>
+  </div>`,Ze()}function $(e){let t=Xe[n.page]||Xe.dashboard,i=document.getElementById(`tb-title`),a=document.getElementById(`tb-sub`),o=document.getElementById(`tb-actions`);i&&(i.textContent=t.title),a&&(a.textContent=t.sub);let s={dashboard:`<button class="btn btn-primary btn-sm" data-action="openScanPicker">${F} Run scan</button>`,clients:`<button class="btn btn-primary btn-sm" data-action="openAddClientModal">${I} Add client</button>`,scans:`<button class="btn btn-primary btn-sm" data-action="openScanPicker">${F} Run scan</button>`,team:r()?`
+      <button class="btn btn-secondary btn-sm" data-action="openRoleGuide">Role guide</button>
+      <button class="btn btn-primary btn-sm"   data-action="openInviteModal">${I} Invite</button>`:``,settings:``};o&&(o.innerHTML=s[n.page]||``);let c=document.getElementById(`content`);if(c){if(c.className=`content fadein`,e?.type===`scanReport`){c.innerHTML=je(e.id);return}c.innerHTML=({dashboard:H,clients:Ce,scans:Ae,team:Me,settings:He,about:Ge}[n.page]||H)()}}function Ze(){document.addEventListener(`click`,Qe)}async function Qe(e){let t=e.target.closest(`[data-nav]`);if(t){await Z(t.dataset.nav);return}let r=e.target.closest(`[data-action]`);if(!r)return;let i=r.dataset.action,a=r.dataset.id,o=r.dataset.role;switch(i){case`viewScan`:n.page=`scans`,$({type:`scanReport`,id:a});break;case`openScanPicker`:$e();break;case`runScan`:await et(a);break;case`openAddClientModal`:we();break;case`openEditClientModal`:Ee(a);break;case`deleteClient`:await De(a);break;case`setIcp`:Te(r.dataset.prefix,r.dataset.icp);break;case`openInviteModal`:Ne();break;case`openEditMemberModal`:Fe(a);break;case`openRoleGuide`:Ve();break;case`setInvRole`:Pe(o);break;case`setEditRole`:Ie(o);break;case`changeRole`:await Le(a,o);break;case`suspendMember`:await Re(a);break;case`reactivateMember`:await ze(a);break;case`removeMember`:await Be(a);break;case`clearScans`:await Ue();break;case`exportData`:We();break;case`openProfileModal`:tt();break}}window._nav=e=>Z(e);function $e(){let e=r()?n.clients:n.clients.filter(e=>e.am_id===n.member.id);if(!e.length){k(`Add a client first`,`danger`),Z(`clients`);return}j(`<div class="modal">
+    <div class="modal-hd">
+      <div class="modal-title">Run AI site scan</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="fg">
+        <label class="flabel">Select client</label>
+        <select class="fselect" id="sp-client">${e.map(e=>{let t=!e.last_scan||Date.now()>new Date(e.last_scan).getTime()+21*864e5;return`<option value="${e.id}">${e.name}${t?` ⚠ due`:``} — ${e.url.replace(/^https?:\/\//,``).slice(0,36)}</option>`}).join(``)}</select>
+      </div>
+      ${`
+      <div class="alert alert-warn" style="margin-top:8px">
+        ${R}
+        <span><strong>Demo mode:</strong> Returns realistic mock scan data instantly. Connect Supabase + Anthropic key for live AI scans.</span>
+      </div>`}
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="sp-go-btn">${F} Start scan</button>
+    </div>
+  </div>`),document.getElementById(`sp-go-btn`).addEventListener(`click`,()=>{let e=document.getElementById(`sp-client`)?.value;A(),e&&et(e)})}async function et(e){let t=n.clients.find(t=>t.id===e);n.page=`scans`,Q();let r=document.getElementById(`content`);r&&(r.innerHTML=`
+    <div class="card" style="max-width:480px;margin:40px auto">
+      <div class="card-body" style="padding:40px;text-align:center">
+        <div class="spinner" style="margin:0 auto 18px"></div>
+        <div style="font-weight:600;font-size:15px;margin-bottom:6px">Scanning ${t?.name||`site`}…</div>
+        <div style="color:var(--text2);font-size:12px;margin-bottom:16px">
+          Generating demo scan report…
+        </div>
+        <div class="prog-bar"><div class="prog-fill pulsing" style="width:70%"></div></div>
+        <div style="color:var(--text3);font-size:11px;margin-top:10px">
+          Just a moment…
+        </div>
+      </div>
+    </div>`);let{data:i,error:a}=await re(e);if(a){let t=document.getElementById(`content`);t&&(t.innerHTML=`
+      <div class="card" style="max-width:440px;margin:40px auto">
+        <div class="card-body" style="padding:40px;text-align:center">
+          <div style="font-size:32px;margin-bottom:12px">⚠</div>
+          <div style="font-weight:600;margin-bottom:8px">Scan failed</div>
+          <div style="color:var(--text2);font-size:12px;margin-bottom:18px">${a.message}</div>
+          <button class="btn btn-primary btn-sm" data-action="runScan" data-id="${e}">Try again</button>
+        </div>
+      </div>`);return}k(`Scan complete${i.email_sent?` — report emailed to AM`:``}`,`success`);let o=await p();n.members=o.members,n.clients=o.clients,n.scans=o.scans,Q(),$({type:`scanReport`,id:i.scan_id})}function tt(){let e=n.member;j(`<div class="modal">
+    <div class="modal-hd">
+      <div class="modal-title">My profile</div>
+      <button class="modal-x" onclick="window._closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)">
+        <div class="av av-32 ${E(e.role)}" style="width:48px;height:48px;font-size:16px">${C(e.name)}</div>
+        <div>
+          <div style="font-weight:600;font-size:15px">${e.name}</div>
+          <div style="font-size:12px;color:var(--text2)">${e.email}</div>
+          <span class="badge ${e.role===`admin`?`badge-blue`:`badge-green`}" style="margin-top:5px">${e.role}</span>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="flabel">Display name</label>
+        <input class="finput" id="pr-name" value="${e.name}">
+      </div>
+      ${`
+      <div class="alert alert-info" style="margin-top:4px">
+        ${R}<span>Password changes are disabled in demo mode.</span>
+      </div>`}
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-danger btn-sm" id="pr-logout-btn" style="margin-right:auto">Sign out</button>
+      <button class="btn btn-secondary" onclick="window._closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="pr-save-btn">Save</button>
+    </div>
+  </div>`),document.getElementById(`pr-logout-btn`).addEventListener(`click`,async()=>{await ne(),n.session=null,n.member=null,A(),X()}),document.getElementById(`pr-save-btn`).addEventListener(`click`,async()=>{let t=document.getElementById(`pr-name`).value.trim();if(t&&t!==e.name){let{updateMember:r}=await Ye(async()=>{let{updateMember:e}=await Promise.resolve().then(()=>l);return{updateMember:e}},void 0);await r(e.id,{name:t}),n.member={...n.member,name:t}}A(),await Z(n.page),k(`Profile updated`)})}</script>
+</body>
+</html>
